@@ -1,0 +1,221 @@
+/* heroes */
+.heroes {
+    padding: 1.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
+}
+
+#cardDesign {
+    background-color: var(--dark-color);
+    position: relative;
+    padding: 0.5em;
+    width: 100%;
+    height: 32em;
+    border-top-left-radius: 1em;
+    border-bottom-right-radius: 25%;
+    display: flex;
+    justify-content: center;
+    padding-top: 7em;
+    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.363);
+}
+
+#designContainer {
+    height: fit-content;
+}
+
+#cardDesign > #designContainer > img {
+    width: 4em;
+    position: absolute;
+    top: 1.5em;
+    left: 1.5em;
+    background-color: var(--lightest-color);
+    padding: 0.25em;
+    border-radius: 0.5em;
+}
+
+#grid2023 {
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+}
+
+#grid2023 div {
+    width: fit-content;
+    height: fit-content;
+    color: var(--lightest-color);
+    font-family: 'Rajdhani', sans-serif;
+    line-height: 70%;
+    font-size: 8.5em;
+    font-weight: 900;
+}
+
+#grid2023 #big2 {
+    grid-area: 1 / 1 / 4 / 3;
+    font-size: 29.5em;
+    background-image: var(--gradient-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#cardDesign h2 {
+    margin-left: 0.5em;
+    font-size: 1.5em;
+    font-weight: 700;
+    line-height: 80%;
+    letter-spacing: 4px;
+    font-family: 'Rajdhani', sans-serif;
+    color: var(--lightest-color);
+}
+
+.heroes p {
+    padding: 1em 2em 0 0.5em;
+    font-size: 1.25em;
+    font-weight: 500;
+    text-align: justify;
+    color: var(--dark-color);
+}
+
+.heroes p > span > a {
+    color:var(--dark-color);
+    font-weight: bolder;
+}
+
+.heroes p > span > a:hover {
+    color: var(--bright-color);
+}
+/* core-values green*/
+
+/* roadmap white*/
+
+/* technology green*/
+.technology {
+    background-color: var(--dark-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.technology > h2,
+.technology div h3 {
+    text-align: center;
+    margin: 0.5em auto;
+}
+
+.container {
+    display: flex;
+}
+
+.language,
+.front-end,
+.back-end {
+    flex: 1;
+    
+}
+
+#front-end,
+#front-end h3 {
+    background-color: var(--lightest-color);
+    color: var(--dark-color);
+}
+
+#front-end h3 {
+    border-bottom: 3px solid var(--dark-color);
+}
+
+.language img,
+.front-end img,
+.back-end img {
+    width: 100%;
+    height: 100%;
+    background-color: var(--light-color);
+    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.363);
+}
+/* partners white*/
+.partners {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
+    padding: 0 0.5em;
+}
+
+.partner-slide {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: clip;
+}
+
+.partner-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    width: 25%;
+    flex-shrink: 0;
+    animation:  moving 24s ease-in-out infinite;
+}
+
+.partner-logo img {
+    width: 100%;
+    height: auto;
+}
+
+.partner-logo.bigLogo img {
+    width: 75%;
+}
+
+@keyframes moving {
+    0% {
+        transform: translateX(0);
+    }
+    10% {
+        transform: translateX(0);
+    }
+    13% {
+        transform: translate(-100%);
+    }
+    23% {
+        transform: translateX(-100%);
+    }
+    26% {
+        transform: translate(-200%);
+    }
+    36% {
+        transform: translateX(-200%);
+    }
+    39% {
+        transform: translate(-300%);
+    }
+    49% {
+        transform: translate(-300%);
+    }
+    52% {
+        transform: translate(-400%);
+    }
+    62% {
+        transform: translate(-400%);
+    }
+    65% {
+        transform: translate(-500%);
+    }
+    75% {
+        transform: translate(-500%);
+    }
+    78% {
+        transform: translate(-600%);
+    }
+    88% {
+        transform: translate(-600%);
+    }
+    91% {
+        transform: translate(-700%);
+    }
+    96% {
+        transform: translate(-700%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}

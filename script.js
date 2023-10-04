@@ -1,5 +1,4 @@
 const hamburgerMenu = document.querySelector(".hamburgerMenu");
-
 hamburgerMenu.addEventListener("click", () => {
     const hamburgerLine = document.querySelectorAll(".hamburgerMenu span");
     hamburgerLine.forEach((line) => {
@@ -15,23 +14,32 @@ hamburgerMenu.addEventListener("click", () => {
     });
 });
 
-const sidebarMenu = document.querySelectorAll(".sidebarMenu");
-
 function checkPage() {
-    switch (document.location.href) {
-        case "http://127.0.0.1:5500/index.html":
+    const sidebarMenu = document.querySelectorAll("li.sidebarMenu");
+    const footerMenu = document.querySelectorAll("li.footerMenu");
+
+    const pathArray = document.location.href.split("/");
+    const location = pathArray[pathArray.length-1];
+    switch (location) {
+        case "index.html":
             sidebarMenu[0].classList.toggle("active");
+            footerMenu[0].classList.toggle("active");
             break;
-        case "http://127.0.0.1:5500/products.html":
+        case "products.html":
             sidebarMenu[1].classList.toggle("active");
+            footerMenu[1].classList.toggle("active");
             break;
-        case "http://127.0.0.1:5500/organization.html":
+        case "organization.html":
             sidebarMenu[2].classList.toggle("active");
+            footerMenu[2].classList.toggle("active");
             break;
-        case "http://127.0.0.1:5500/contact.html":
+        case "contact.html":
             sidebarMenu[3].classList.toggle("active");
+            footerMenu[3].classList.toggle("active");
             break;
     }
+    
 }
-
 window.onload = checkPage;
+
+// function nextPartner

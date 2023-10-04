@@ -105,10 +105,10 @@ nav {
 
 .hamburgerMenu span {
     display: block;
-    width: 2.5em;
+    width: 2em;
     height: 0.25em;
     background-color: var(--lightest-color);
-    transition: all 0.1s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 .hamburger-line1 {
@@ -119,20 +119,12 @@ nav {
     transform: translateY(0.25em);
 }
 
-.hamburgerMenu.active {
-    background-color: var(--mid-color);
-}
-
-.hamburgerMenu span.active {
-    background-color: var(--lightest-color);
-}
-
 .hamburger-line1.active {
-    transform: rotate(45deg) translateY(5px) translate(1px);
+    transform: rotate(45deg) translateY(3px) translate(3px);
 }
 
 .hamburger-line3.active {
-    transform: rotate(-45deg) translateY(-5px) translate(1px);
+    transform: rotate(-45deg) translateY(-3px) translate(3px);
 }
 
 .hamburger-line2.active {
@@ -172,7 +164,7 @@ nav {
 }
 
 
-.sidebar > .menu > ul {
+.sidebar > .sidebarMenu > ul {
     display: flex;
     flex-direction: column;
     gap: 1.5em;
@@ -185,7 +177,7 @@ li.sidebarMenu.active > a {
     pointer-events: none;
 }
 
-.menu > ul a:hover {
+li.sidebarMenu a:hover {
     border-bottom:2px solid var(--dark-color);
 }
 
@@ -208,162 +200,6 @@ li.sidebarMenu.active > a {
     margin-top: auto;
     margin-bottom: 1em;
 }
-
-/* heroes */
-.heroes {
-    padding: 1.5em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5em;
-}
-
-#cardDesign {
-    background-color: var(--dark-color);
-    position: relative;
-    padding: 0.5em;
-    width: 100%;
-    height: 32em;
-    border-top-left-radius: 1em;
-    border-bottom-right-radius: 25%;
-    display: flex;
-    justify-content: center;
-    padding-top: 7em;
-    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.363);
-}
-
-#designContainer {
-    height: fit-content;
-}
-
-#cardDesign > #designContainer > img {
-    width: 4em;
-    position: absolute;
-    top: 1.5em;
-    left: 1.5em;
-    background-color: var(--lightest-color);
-    padding: 0.25em;
-    border-radius: 0.5em;
-}
-
-#grid2023 {
-    display: grid;
-    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
-}
-
-#grid2023 div {
-    width: fit-content;
-    height: fit-content;
-    color: var(--lightest-color);
-    font-family: 'Rajdhani', sans-serif;
-    line-height: 70%;
-    font-size: 8.5em;
-    font-weight: 900;
-}
-
-#grid2023 #big2 {
-    grid-area: 1 / 1 / 4 / 3;
-    font-size: 29.5em;
-    background-image: var(--gradient-color);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-#cardDesign h2 {
-    margin-left: 0.5em;
-    font-size: 1.5em;
-    font-weight: 700;
-    line-height: 80%;
-    letter-spacing: 4px;
-    font-family: 'Rajdhani', sans-serif;
-    color: var(--lightest-color);
-}
-
-.heroes p {
-    padding: 1em 2em 0 0.5em;
-    font-size: 1.25em;
-    font-weight: 500;
-    text-align: justify;
-    color: var(--dark-color);
-}
-
-.heroes p > span > a {
-    color:var(--dark-color);
-    font-weight: bolder;
-}
-
-.heroes p > span > a:hover {
-    color: var(--bright-color);
-}
-/* core-values green*/
-
-/* roadmap white*/
-
-/* technology green*/
-.technology {
-    background-color: var(--dark-color);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.technology > h2,
-.technology div h3 {
-    text-align: center;
-    margin: 0.5em auto;
-}
-
-.container {
-    display: flex;
-}
-
-.language,
-.front-end,
-.back-end {
-    flex: 1;
-    
-}
-
-#front-end,
-#front-end h3 {
-    background-color: var(--lightest-color);
-    color: var(--dark-color);
-}
-
-#front-end h3 {
-    border-bottom: 3px solid var(--dark-color);
-}
-
-.language img,
-.front-end img,
-.back-end img {
-    width: 100%;
-    height: 100%;
-    background-color: var(--light-color);
-    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.363);
-}
-/* partners white*/
-.partners {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5em;
-}
-
-.partner-slide {
-    display: grid;
-    grid-template: 1fr / repeat(4, 1fr);
-}
-
-.partner-logo {
-    padding: 1em;
-}
-
-.partner-logo img {
-    width: 100%;
-    height: auto;
-}
 /* footer */
 footer {
     background-color: var(--footer-color);
@@ -384,12 +220,22 @@ footer .logoCompany a:hover {
     color: #00c200;
 }
 
-.menu > ul {
+footer > .footerMenu > ul {
+    display: flex;
+    flex-direction: column;
     gap: 0.5em;
 }
 
 li.footerMenu a {
     color: var(--lightest-color);
+    padding: 0 0.25em;
+}
+
+li.footerMenu.active a {
+    background-color: var(--lightest-color);
+    color: var(--dark-color);
+    border-radius: 5px;
+    pointer-events: none;
 }
 
 li.footerMenu a:hover {
