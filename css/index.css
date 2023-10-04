@@ -1,23 +1,23 @@
 /* heroes */
 .heroes {
-    padding: 1.5em;
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.5em;
+    gap: 0.5rem;
 }
 
 #cardDesign {
     background-color: var(--dark-color);
     position: relative;
-    padding: 0.5em;
+    padding: 0.5rem;
     width: 100%;
-    height: 32em;
-    border-top-left-radius: 1em;
+    height: 32rem;
+    border-top-left-radius: 1rem;
     border-bottom-right-radius: 25%;
     display: flex;
     justify-content: center;
-    padding-top: 7em;
+    padding-top: 7rem;
     box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.363);
 }
 
@@ -26,13 +26,13 @@
 }
 
 #cardDesign > #designContainer > img {
-    width: 4em;
+    width: 4rem;
     position: absolute;
-    top: 1.5em;
-    left: 1.5em;
+    top: 1.5rem;
+    left: 1.5rem;
     background-color: var(--lightest-color);
-    padding: 0.25em;
-    border-radius: 0.5em;
+    padding: 0.25rem;
+    border-radius: 0.5rem;
 }
 
 #grid2023 {
@@ -46,21 +46,21 @@
     color: var(--lightest-color);
     font-family: 'Rajdhani', sans-serif;
     line-height: 70%;
-    font-size: 8.5em;
+    font-size: 8.5rem;
     font-weight: 900;
 }
 
 #grid2023 #big2 {
     grid-area: 1 / 1 / 4 / 3;
-    font-size: 29.5em;
+    font-size: 29.5rem;
     background-image: var(--gradient-color);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 #cardDesign h2 {
-    margin-left: 0.5em;
-    font-size: 1.5em;
+    margin-left: 0.5rem;
+    font-size: 1.5rem;
     font-weight: 700;
     line-height: 80%;
     letter-spacing: 4px;
@@ -69,8 +69,9 @@
 }
 
 .heroes p {
-    padding: 1em 2em 0 0.5em;
-    font-size: 1.25em;
+    z-index: 1;
+    padding: 1rem 2rem 0 0.5rem;
+    font-size: 1.25rem;
     font-weight: 500;
     text-align: justify;
     color: var(--dark-color);
@@ -78,7 +79,7 @@
 
 .heroes p > span > a {
     color:var(--dark-color);
-    font-weight: bolder;
+    font-weight: 900;
 }
 
 .heroes p > span > a:hover {
@@ -99,18 +100,41 @@
 .technology > h2,
 .technology div h3 {
     text-align: center;
-    margin: 0.5em auto;
+    margin: 0.5rem auto;
 }
 
 .container {
     display: flex;
+    align-items: center;
+    overflow: hidden;
+    margin: 0 1rem;
+}
+
+.slider {
+    display: inline-flex;
+    width: fit-content;
+    transform: translateX(0);
+    transition: transform 0.3s ease-out;
+}
+
+.grabbing {
+    cursor: grabbing;
+}
+
+.grabbing div img {
+    transform: scale(1.1);
 }
 
 .language,
 .front-end,
 .back-end {
-    flex: 1;
-    
+    width: 100%;
+    height: auto;
+    flex-shrink: 0;
+    padding: 1rem 0 2rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #front-end,
@@ -126,40 +150,52 @@
 .language img,
 .front-end img,
 .back-end img {
-    width: 100%;
+    width: 30%;
     height: 100%;
-    background-color: var(--light-color);
+    padding: 1rem;
+    background-color: var(--lightest-color);
     box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.363);
+    border-radius: 1rem;
+    transition: transform 0.3s ease-out;
 }
+
+.arrowLeft,
+.arrowRight {
+    font-size: 2rem;
+}
+
 /* partners white*/
 .partners {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.5em;
-    padding: 0 0.5em;
+    gap: 0.5rem;
+    padding: 0 0.5rem;
 }
 
 .partner-slide {
     display: flex;
     flex-wrap: nowrap;
-    overflow: clip;
+    overflow: hidden;
 }
 
 .partner-logo {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1em;
-    width: 25%;
+    padding: 0.75rem;
+    width: 33%;
     flex-shrink: 0;
-    animation:  moving 24s ease-in-out infinite;
+    animation: moving 30s ease-in-out infinite;
 }
 
 .partner-logo img {
     width: 100%;
     height: auto;
+    padding: 0.5rem;
+    background-color: var(--lightest-color);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.363);
 }
 
 .partner-logo.bigLogo img {
@@ -170,50 +206,56 @@
     0% {
         transform: translateX(0);
     }
-    10% {
+    8% {
         transform: translateX(0);
     }
-    13% {
+    11% {
         transform: translate(-100%);
     }
-    23% {
+    19% {
         transform: translateX(-100%);
     }
-    26% {
+    22% {
         transform: translate(-200%);
     }
-    36% {
+    30% {
         transform: translateX(-200%);
     }
-    39% {
+    33% {
         transform: translate(-300%);
     }
-    49% {
+    41% {
         transform: translate(-300%);
+    }
+    44% {
+        transform: translate(-400%);
     }
     52% {
         transform: translate(-400%);
     }
-    62% {
-        transform: translate(-400%);
-    }
-    65% {
+    55% {
         transform: translate(-500%);
     }
-    75% {
+    63% {
         transform: translate(-500%);
     }
-    78% {
+    66% {
         transform: translate(-600%);
+    }
+    74% {
+        transform: translate(-600%);
+    }
+    77% {
+        transform: translate(-700%);
+    }
+    85% {
+        transform: translate(-700%);
     }
     88% {
-        transform: translate(-600%);
-    }
-    91% {
-        transform: translate(-700%);
+        transform: translate(-800%);
     }
     96% {
-        transform: translate(-700%);
+        transform: translate(-800%);
     }
     100% {
         transform: translateX(0%);

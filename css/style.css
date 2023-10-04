@@ -29,7 +29,7 @@ body {
     justify-content: space-between;
     background-color: var(--mid-color);
     position: relative;
-    gap: 1em;
+    gap: 1rem;
 }
 
 a {
@@ -67,7 +67,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     background-color: var(--dark-color);
-    padding: 0.5em 1.5em;
+    padding: 0.5rem 1.5rem;
 }
 
 .logoCompany {
@@ -76,27 +76,27 @@ nav {
 }
 
 .logoCompany img {
-    width: 2.5em;
+    width: 2.5rem;
     background-color: var(--lightest-color);
-    padding: 0.25em;
-    border-radius: 0.5em;
+    padding: 0.25rem;
+    border-radius: 0.5rem;
 }
 
 .logoCompany p,
 .logoCompany a {
     color: var(--lightest-color);
-    margin: 0 0.25em;
+    margin: 0 0.25rem;
 }
 /* hamburger Menu */
 .hamburgerMenu {
-    width: 3em;
-    height: 2.5em;
+    width: 3rem;
+    height: 2.5rem;
     cursor: pointer;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-radius: 0.5em;
+    border-radius: 0.5rem;
 }
 
 .hamburgerMenu:hover {
@@ -105,8 +105,8 @@ nav {
 
 .hamburgerMenu span {
     display: block;
-    width: 2em;
-    height: 0.25em;
+    width: 2rem;
+    height: 0.25rem;
     background-color: var(--lightest-color);
     transition: all 0.2s ease-in-out;
 }
@@ -141,33 +141,32 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: start;
-    gap: 1em;
-    padding: 1em 1em 0 2em;
+    gap: 1rem;
+    padding: 1rem 1rem 0 2rem;
     transition: all 0.2s ease-in-out;
-    z-index: 1;
+    z-index: 100;
     border-bottom-right-radius: 25%;
 }
 
 .sidebar img {
-    width: 3.5em;
+    width: 3.5rem;
     background-color: var(--lightest-color);
-    padding: 0.25em;
+    padding: 0.25rem;
     border: 2px solid var(--dark-color);
-    border-radius: 0.5em;
+    border-radius: 0.5rem;
 }
 
 .sidebar span {
     width: 75%;
-    height: 0.5em;
-    border-radius: 1em;
+    height: 0.5rem;
+    border-radius: 1rem;
     background-color: var(--dark-color);
 }
-
 
 .sidebar > .sidebarMenu > ul {
     display: flex;
     flex-direction: column;
-    gap: 1.5em;
+    gap: 1.5rem;
 }
 
 li.sidebarMenu.active > a {
@@ -175,6 +174,7 @@ li.sidebarMenu.active > a {
     color: var(--lightest-color);
     border-radius: 5px;
     pointer-events: none;
+    user-select: none;
 }
 
 li.sidebarMenu a:hover {
@@ -183,8 +183,8 @@ li.sidebarMenu a:hover {
 
 .sidebar a {
     color: var(--dark-color);
-    font-size: 2em;
-    padding: 0 0.25em;
+    font-size: 2rem;
+    padding: 0 0.25rem;
 }
 
 .sidebar.active {
@@ -193,27 +193,28 @@ li.sidebarMenu a:hover {
 
 .socialMedia ul {
     display: flex;
-    gap: 1em;
+    gap: 0.5rem;
 }
 
 .sidebar .socialMedia {
     margin-top: auto;
-    margin-bottom: 1em;
+    margin-bottom: 1rem;
+    margin-left: -0.5rem;
 }
 /* footer */
 footer {
     background-color: var(--footer-color);
     color: var(--lightest-color);
-    font-size: 1em;
+    font-size: 1rem;
     display: flex;
     flex-direction: column;
-    gap: 1em;
-    padding: 1.5em;
+    gap: 1rem;
+    padding: 1.5rem;
 }
 
 footer .logoCompany a {
     color: var(--light-color);
-    font-size: 2em;
+    font-size: 2rem;
 }
 
 footer .logoCompany a:hover {
@@ -223,12 +224,12 @@ footer .logoCompany a:hover {
 footer > .footerMenu > ul {
     display: flex;
     flex-direction: column;
-    gap: 0.5em;
+    gap: 0.5rem;
 }
 
 li.footerMenu a {
     color: var(--lightest-color);
-    padding: 0 0.25em;
+    padding: 0 0.25rem;
 }
 
 li.footerMenu.active a {
@@ -236,6 +237,7 @@ li.footerMenu.active a {
     color: var(--dark-color);
     border-radius: 5px;
     pointer-events: none;
+    user-select: none;
 }
 
 li.footerMenu a:hover {
@@ -244,7 +246,7 @@ li.footerMenu a:hover {
 
 footer li.socialMedia a {
     color: var(--lightest-color);
-    font-size: 1.5em;
+    font-size: 1.5rem;
 }
 
 li.socialMedia a:hover {
