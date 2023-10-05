@@ -42,7 +42,6 @@ li {
 
 h2,
 h3 {
-    margin: 0 auto;
     width: fit-content;
     color: var(--dark-color);
     border-bottom: 3px solid var(--dark-color);

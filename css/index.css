@@ -70,8 +70,8 @@
 
 .heroes p {
     z-index: 1;
-    padding: 1rem 2rem 0 0.5rem;
-    font-size: 1.25rem;
+    padding: 1.5rem 2rem 0 0.5rem;
+    font-size: 1.75rem;
     font-weight: 500;
     text-align: justify;
     color: var(--dark-color);
@@ -80,6 +80,7 @@
 .heroes p > span > a {
     color:var(--dark-color);
     font-weight: 900;
+    font-size: 2rem;
 }
 
 .heroes p > span > a:hover {
@@ -150,7 +151,7 @@
 .language img,
 .front-end img,
 .back-end img {
-    width: 30%;
+    width: 50%;
     height: 100%;
     padding: 1rem;
     background-color: var(--lightest-color);
@@ -178,6 +179,7 @@
     display: flex;
     flex-wrap: nowrap;
     overflow: hidden;
+    width: 100%;
 }
 
 .partner-logo {
@@ -187,7 +189,8 @@
     padding: 0.75rem;
     width: 33%;
     flex-shrink: 0;
-    animation: moving 30s ease-in-out infinite;
+    transition: transform 1s ease-in-out;
+    /* animation: moving 30s ease-in-out infinite; */
 }
 
 .partner-logo img {
@@ -202,7 +205,7 @@
     width: 75%;
 }
 
-@keyframes moving {
+/* @keyframes moving {
     0% {
         transform: translateX(0);
     }
@@ -260,4 +263,4 @@
     100% {
         transform: translateX(0%);
     }
-}
+} */

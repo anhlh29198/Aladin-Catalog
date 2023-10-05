@@ -1,3 +1,4 @@
+//animate menu
 const hamburgerMenu = document.querySelector(".hamburgerMenu");
 hamburgerMenu.addEventListener("click", () => {
     const hamburgerLine = document.querySelectorAll(".hamburgerMenu span");
@@ -13,7 +14,7 @@ hamburgerMenu.addEventListener("click", () => {
         section.classList.toggle("active");
     });
 });
-
+//check page for menu
 function checkPage() {
     const sidebarMenu = document.querySelectorAll("li.sidebarMenu");
     const footerMenu = document.querySelectorAll("li.footerMenu");
@@ -119,3 +120,62 @@ sliders.forEach(slider => {
         slider.style.transform = `translateX(${currentTranslate}px)`;
     }
 });
+//partner-logo auto play
+const partnerSlide = document.querySelectorAll(".partner-logo");
+const intervalPartnerTime = 2000;
+let indexPartner = 0;
+
+window.onload = nextPartner;
+let slidePartnerInterval = setInterval(nextPartner, intervalPartnerTime);
+
+function nextPartner() {
+    if (indexPartner < partnerSlide.length - 3) {
+        indexPartner++;
+    }
+    else {
+        indexPartner = 0;
+    }
+    partnerSlide.forEach((slide) => {
+        slide.style.transform =  `translate(-${indexPartner*100}%)`;
+    });
+}
+//products autoplay and slideshow
+// const slideShows = document.querySelectorAll(".slideShow");
+
+
+
+
+
+
+// slideShows.forEach((slideShow) => {
+//     window.onload = nextProduct;
+//     const intervalProductTime = 10000;
+//     let slideProductInterval = setInterval(nextProduct, intervalProductTime);
+//     let indexProduct = 0;
+
+//     const slides = slideShow.querySelectorAll(".slide");
+
+//     function nextProduct() {
+//         console.log(slides);
+//         slides[indexProduct].classList.remove("current");
+//         (indexProduct < slides.length - 1) ? indexProduct++ : indexProduct = 0;
+//         slides[indexProduct].classList.add("current");
+//         console.log(slides);
+//     }
+// });
+
+const testShow = document.querySelector(".services .slideShow");
+
+const testSlides = testShow.querySelectorAll(".slide");
+function next() {
+    console.log(testSlides);
+    testSlides[i].classList.remove("current");
+    (i < testSlides.length - 1) ? i++ : i = 0;
+    testSlides[i].classList.add("current");
+    console.log(testSlides);
+}
+
+window.onload = next;
+const interval = 4000;
+let intervalSlide = setInterval(next, interval);
+let i = 0;

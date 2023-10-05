@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aladintech Contacts</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"/>
     <link rel="stylesheet" href="./css/contact.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
     <title>Aladintech 2023 Company Contacts</title>
 </head>
 <body>
@@ -44,17 +46,67 @@
         </div>
     </nav>
     <!-- heroes -->
-
+    <section class="heroes">
+        <div>
+            <h2>Contact Us</h2>
+            <p>Get in touch with us to know more about our services as well as information on latest technology trend. </p>
+        </div>
+        <div>
+            <img src="./img/heroes/contact.gif" alt="gif of contact">
+        </div>
+    </section>
     <!-- form and info -->
-    <section>
-        <div>
-
-        </div>
-        <div>
-            <form action="">
-            
-            </form>
-        </div>
+    <section class="contact">
+            <h3>Information</h3>
+            <p>
+                <ion-icon name="map-outline"></ion-icon> Floor 4&5, Meco Complex Apartment HH1, Lane 102 Truong Chinh, Phuong Mai, Dong Da, Hanoi
+                <br>
+                <ion-icon name="call-outline"></ion-icon> +84 988 740 467 / +84 976 423 099
+                <br>
+                <ion-icon name="mail-outline"></ion-icon> support@aladintech.co
+                <br>
+                <ion-icon name="globe-outline"></ion-icon> https://aladintech.co/
+            </p>
+    </section>
+    <section class="form">
+        <form action="" method="">
+            <fieldset>
+                <legend>Contact us</legend>
+                <div>
+                    <label for="full-name">First and last name</label>
+                    <input name="full-name" id="full-name" type="text" placeholder="Le Van A">
+                </div>
+                <div>
+                    <label for="email">Email</label>
+                    <input name="email" id="email" type="email" placeholder="you@example.com">
+                </div>
+                <div>
+                    <label for="fb-link">Facebook profile</label>
+                    <input name="fb-link" id="fb-link" type="text">
+                </div>
+                <div>
+                    <label for="phone">Phone number</label>
+                    <input name="phone" id="phone" type="tel">
+                </div>
+                <div>
+                    <label for="job">Your job</label>
+                    <input name="job" id="job" type="text">
+                </div>
+                <div>
+                    <label for="organization">Company name/Schools</label>
+                    <input name="organization" id="organization" type="text">
+                </div>
+                <div>
+                    <label for="message">Message</label>
+                    <textarea name="message" id="message" cols="30" rows="10" placeholder="Message you want to send to us"></textarea>
+                </div>
+                <div>
+                    <input name="receive-mail" id="receive-mail" type="checkbox">
+                    <label for="receive-mail">Do you want to receive mail from us?</label>
+                </div>
+                <button type="submit">Contact</button>
+            </fieldset>
+        </form>
     </section>
     <!-- footer -->
     <footer>
@@ -86,6 +138,12 @@
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script>
+        const phoneInputField = document.querySelector("#phone");
+        const phoneInput = window.intlTelInput(phoneInputField, {
+            utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+        });
+    </script>
     <script src="./script.js"></script>
 </body>
 </html>
