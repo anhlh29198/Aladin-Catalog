@@ -1,0 +1,140 @@
+:root {
+    --dark-color: #285430;
+    --mid-color: #E4EFE7;
+    --light-color:#FAF1E6;
+    --lightest-color: #FDFAF6;
+    --footer-color: #064420;
+    --bright-color: #00c200;
+    --gradient-color: linear-gradient(120deg, #FDFAF6, #A0C334);
+}
+
+section {
+    flex: 1;
+}
+
+/* heroes */
+.heroes {
+    background: url("../img/background/organization\ 320px.png");
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 1.5rem 3rem 1.5rem;
+    gap: 3rem;
+}
+
+.heroes h2 span {
+    color: var(--lightest-color);
+} 
+
+.heroes > div + div + div {
+    display: flex;
+}
+
+section.heroes h2,
+section.heroes p {
+    color: var(--lightest-color);
+}
+
+section.heroes h2 {
+    margin: 0 auto;
+    color: var(--dark-color);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    padding-left: 0.5rem;
+    letter-spacing: 0.2rem;
+    border: none;
+}
+
+section.heroes p {
+    font-size: 1.4rem;
+    color: var(--dark-color);
+    text-align: justify;
+}
+
+section.heroes button {
+    cursor: pointer;
+    outline-style: none;
+    color: var(--lightest-color);
+    background-color: var(--dark-color);
+    padding: 0.5rem;
+    border: 1px solid var(--lightest-color);
+    border-radius: 5px;
+    margin: 0 0.75rem;
+    font-size: 1rem;
+    font-weight: 600;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.253);
+    transition: all 0.2s ease-in-out;
+}
+
+section.heroes button:hover {
+    color: var(--dark-color);
+    background-color: var(--lightest-color);
+    box-shadow: 3px 2px 2px rgba(0, 0, 0, 0.253);
+}
+
+section.heroes img {
+    width: 100%;
+    border-radius: 5px;
+    border: 3px solid var(--dark-color);
+}
+
+/* personnel */
+.personnel,
+.extracurricular {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    gap: 1.5rem;
+}
+
+.personnel img,
+.extracurricular img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.personnel img {
+    border: 1px solid var(--lightest-color);
+}
+
+#personnel p {
+    font-size: 1.1rem;
+    text-align: justify;
+    line-height: 1.75rem;
+}
+
+table {
+    background-color: var(--lightest-color);
+    color: var(--dark-color);
+    border-spacing: 0.75rem;
+}
+
+caption {
+    color: var(--lightest-color);
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+    border-bottom: 3px solid var(--lightest-color);
+}
+
+th {
+    text-align: start;
+}
+
+td {
+    border-bottom: 1px solid var(--dark-color);
+}
+
+tfoot {
+    font-weight: 700;
+}
+
+.extracurricular img {
+    border: 1px solid var(--dark-color);
+}
+
+#extracurricular p {
+    font-size: 1.1rem;
+    line-height: 2rem;
+}

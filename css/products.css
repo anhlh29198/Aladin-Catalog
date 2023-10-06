@@ -8,74 +8,118 @@
     --gradient-color: linear-gradient(120deg, #FDFAF6, #A0C334);
 }
 
+section,
+section > h2,
+section a {
+    background-color: var(--dark-color);
+    color: var(--mid-color);
+}
+
+section > h2,
+section.heroes ~ section a {
+    border-bottom: 3px solid var(--mid-color);
+}
+
+section:nth-child(odd),
+section:nth-child(odd) > h2,
+section.heroes ~ section:nth-child(odd) a {
+    background-color: var(--mid-color);
+    color: var(--dark-color);
+}
+
+section:nth-child(odd) > h2,
+section.heroes ~ section:nth-child(odd) a {
+    border-bottom: 3px solid var(--dark-color);
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+    gap: 1rem;
+}
+
 /* heroes */
 .heroes {
-    background: url("../img/heroes/Website\ mobile\ design.png");
+    background: url("../img/background/products\ 320px.png");
     background-size: cover;
-    /* background-color: var(--dark-color); */
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1rem 1.5rem 4rem 1.5rem;
-    gap: 1.5rem;
+    padding: 1.25rem 1.5rem 3rem 1.5rem;
+    gap: 3rem;
 }
 
 .heroes > div + div {
     display: flex;
 }
 
-.heroes button {
+section.heroes h2,
+section.heroes p {
+    color: var(--lightest-color);
+}
+
+section.heroes h2 {
+    color: var(--dark-color);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    padding-left: 0.5rem;
+}
+
+section.heroes h2 span {
+    color: var(--lightest-color);
+}
+
+section.heroes p {
+    font-size: 1.5rem;
+    text-align: justify;
+}
+
+section.heroes button {
+    cursor: pointer;
     outline-style: none;
     color: var(--lightest-color);
     background-color: var(--dark-color);
     padding: 0.5rem;
     border: 1px solid var(--lightest-color);
     border-radius: 5px;
-    margin: 0 clamp(1rem, 1rem + 1vw, 2rem);
-    font-size: clamp(1rem, 1rem + 1vw, 2rem);
+    margin: 0 1rem;
+    font-size: 1rem;
     font-weight: 600;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.253);
+    transition: all 0.2s ease-in-out;
 }
 
-.heroes button:hover {
+section.heroes button:hover {
     color: var(--dark-color);
     background-color: var(--lightest-color);
+    box-shadow: 3px 2px 2px rgba(0, 0, 0, 0.253);
 }
 
-.heroes h2,
-.heroes p {
-    color: var(--lightest-color);
-}
-
-.heroes h2 {
-    color: var(--dark-color);
-    font-size: clamp(2.25rem, 1rem + 1vw, 4rem);
-    /* border-bottom: 3px solid var(--lightest-color);  */
-    margin-bottom: 1rem;
-}
-
-.heroes h2 span {
-    color: var(--lightest-color);
-}
-
-.heroes p {
-    font-size: clamp(1.5rem, 1rem + 1vw, 3rem);
-    text-align: justify;
-}
-
-.heroes img {
+section.heroes img {
     width: 100%;
     border-radius: 5px;
     border: 3px solid var(--dark-color);
 }
-
 /* products */
-.entertainment,
-.business,
-.services {
-    display: flex;
-    flex-direction: column;
-    /* flex-shrink: 0;  */
+section.heroes ~ section h2,
+section h3,
+.slide > div {
+    margin: 0.5rem 1.5rem;
+}
+
+section.heroes ~ section h2 {
+    font-size: 1.45rem;
+}
+
+.slide h3 {
+    margin: 0.5rem 0;
+    font-size: 1.25rem;
+}
+
+.slide p {
+    font-size: 1.15rem;
+    text-align: justify;
 }
 
 .slideShow {
@@ -87,7 +131,6 @@
 }
 
 .slide {
-    /* position: absolute; */
     width: 100%;
     height: 100%;
     flex-shrink: 0;
@@ -95,15 +138,20 @@
 }
 
 .slide img {
+    border-radius: 0.25rem;
     width: 100%;
+    border: 3px solid var(--mid-color);
 }
 
-.slide > a {
-    z-index: 1;
+section.heroes ~ section:nth-child(odd) a:hover,
+.slide a:hover {
+    color: var(--bright-color);
 }
 
-.slideShow button {
-    z-index: 2;
+.entertainment img,
+.services img {
+    border-radius: 1rem;
+    border: 3px solid var(--dark-color);
 }
 
 .leftArrow,
@@ -111,19 +159,22 @@
     font-size: 40px;
     position: absolute;
     display: flex;
-    top: 30%;
+    top: 20%;
     color: var(--dark-color);
     background-color: #00000000;
-    transition: all 0.1s ease-in-out;
-    opacity: 0.3;
+    transition: all 0.2s ease-in-out;
+    opacity: 0.5;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .leftArrow:hover,
 .rightArrow:hover {
     opacity: 1;
-    color: var(--lightest-color);
-    border: 1px solid var(--lightest-color);
-    border-radius: 5px;
+    outline: none;
+    color: var(--dark-color);
+    border: 1px solid var(--dark-color);
+    
 }
 
 .leftArrow:active,
@@ -143,21 +194,27 @@
 div.navigation {
     position: absolute;
     display: flex;
+    transform: scale(0);
     gap: 1.5rem;
-    top: 62%;
-    left: 30%;
+    top: 17rem;
+    right: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.185);
+    border-radius: 1rem;
+    padding: 0.25rem;
 }
 
 div.navigation.nav5 {
-    left: 25%;
+    left: 5rem;
 }
 
 button.navigation {
-    width: 1rem;
-    height: 1rem;
+    width: 0.75rem;
+    height: 0.75rem;
     border-radius: 50%;
     border: 1px solid var(--dark-color);
     background-color: rgba(0, 0, 0, 0);
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
 }
 
 button.navigation:hover {
@@ -166,4 +223,5 @@ button.navigation:hover {
 
 button.navigation.show {
     background-color: var(--dark-color);
+    transform: scale(1.3);
 }

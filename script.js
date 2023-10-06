@@ -56,13 +56,18 @@ sliders.forEach(slider => {
         slideImage.addEventListener("dragstart", (e) => e.preventDefault());
         // pointer events
         slide.addEventListener("pointerdown", pointerDown(index));
-        slide.addEventListener('pointerup', pointerUp);
-        slide.addEventListener('pointerleave', pointerUp);
-        slide.addEventListener('pointermove', pointerMove);
+        slide.addEventListener("pointerup", pointerUp);
+        slide.addEventListener("pointerleave", pointerUp);
+        slide.addEventListener("pointermove", pointerMove);
     });
     // make responsive to changes
     slider.addEventListener("resize", setPositionByIndex);
 
+    window.oncontextmenu = function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+        return false;
+    }
     function pointerDown(index) {
         return function (e) {
             currentIndex = index;
@@ -72,15 +77,12 @@ sliders.forEach(slider => {
             slider.classList.add('grabbing');
         }
     }
-
     function pointerMove(e) {
         if (isDragging) {
             const currentPos = e.clientX;
             currentTranslate = prevTranslate + currentPos - startPos;
-            console.log(currentPos, startPos, currentTranslate);
         }
     }
-
     function pointerUp() {
         cancelAnimationFrame(animationID);
         isDragging = false;
@@ -91,28 +93,55 @@ sliders.forEach(slider => {
     
         // if moved enough positive then snap to previous slide if there is one
         if (movedBy > 100 && currentIndex > 0) currentIndex--;
-        console.log(movedBy, currentIndex);
         setPositionByIndex();
     
         slider.classList.remove('grabbing');
-    } 
-
+    }
     function animation() {
         setSliderPosition();
         if (isDragging) requestAnimationFrame(animation);
     }
-    
     function setPositionByIndex() {
         currentTranslate = currentIndex * -slider.getBoundingClientRect().width;
         prevTranslate = currentTranslate;
-        console.log(currentTranslate,currentIndex);
         setSliderPosition();
     }
-    
     function setSliderPosition() {
         slider.style.transform = `translateX(${currentTranslate}px)`;
     }
 });
+// fallback for touch slider
+// const containers = document.querySelectorAll(".container");
+// containers.forEach(container => {
+//     const leftArrow = container.querySelector(".arrowLeft");
+//     const rightArrow = container.querySelector(".arrowRight");
+//     const slides = container.querySelector(".slider").querySelectorAll("div");
+
+//     let i = 0;
+//     leftArrow.addEventListener("click", () => {
+//         if (i > 0) {
+//             i--;
+//         }
+//         else {
+//             i = slides.length - 1;
+//         }
+//         slides.forEach((slide) => {
+//             slide.style.transform =  `translate(-${i*100}%)`;
+//         });
+//     });
+
+//     rightArrow.addEventListener("click", () => {
+//         if (i < slides.length - 1) {
+//             i++;
+//         }
+//         else {
+//             i = 0;
+//         }
+//         slides.forEach((slide) => {
+//             slide.style.transform =  `translate(-${i*100}%)`;
+//         });
+//     });
+// });
 //partner-logo auto play
 function autoPartnerLogo() {
     const slides = document.querySelectorAll(".partner-logo");
@@ -196,13 +225,13 @@ slideShows.forEach((slideShow) => {
             slideInterval = setInterval(next, interval);
         });
     });
-    const images = slideShow.querySelectorAll("a");
+    const images = slideShow.querySelectorAll("img");
     images.forEach((image) => {
-        image.addEventListener("mouseover", () => {
+        image.addEventListener("pointerover", () => {
             clearInterval(slideInterval);
         });
 
-        image.addEventListener("mouseout", () => {
+        image.addEventListener("pointerout", () => {
             slideInterval = setInterval(next, interval);
         });
     });

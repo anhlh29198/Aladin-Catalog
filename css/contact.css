@@ -1,3 +1,155 @@
+:root {
+    --dark-color: #285430;
+    --mid-color: #E4EFE7;
+    --light-color:#FAF1E6;
+    --lightest-color: #FDFAF6;
+    --footer-color: #064420;
+    --bright-color: #00c200;
+    --gradient-color: linear-gradient(120deg, #FDFAF6, #A0C334);
+}
+
+/* heroes */
+.heroes {
+    background: url("../img/background/contact\ 320px.png");
+    /* background-color: var(--mid-color); */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem 1.5rem 3rem 1.5rem;
+    gap: 3rem;
+}
+
+section.heroes h2,
+section.heroes p {
+    color: var(--dark-color);
+}
+
+section.heroes h2 {
+    font-size: 2rem;
+    margin: 1rem auto;
+    padding-left: 0.5rem;
+    border: none;
+}
+
+section.heroes h2 span {
+    color: var(--lightest-color);
+}
+
+section.heroes p {
+    font-size: 1.5rem;
+    text-align: justify;
+}
+
+section.heroes img {
+    width: 100%;
+    border-radius: 5px;
+    border: 3px solid var(--dark-color);
+}
+
 span {
     color: red;
 }
+
+/* contact */
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    gap: 1.5rem;
+}
+
+ul.info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+li.info {
+    display: flex;
+    gap: 1rem;
+    font-size: 1rem;
+    text-align: justify;
+}
+
+li.info ion-icon {
+    flex-shrink: 0;
+}
+
+/* form */
+.form {
+    margin: 2rem 0;
+}
+
+fieldset {
+    border: 1px solid var(--dark-color);
+    border-radius: 5px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+legend {
+    margin: 0 auto;
+}
+
+legend h2 {
+    border-bottom: none;
+}
+
+.form-input {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-input label {
+    font-size: 1.1rem;
+}
+
+.form-input input {
+    line-height: 1.25rem;
+}
+
+.form-input input.invalid {
+    border: 1px solid red;
+}
+
+.form-input input.valid {
+    border: 1px solid green;
+}
+
+.form-input input:focus {
+    outline: 0;
+}
+
+.form-input.check {
+    flex-direction: row;
+    gap: 0.5rem;
+}
+
+textarea {
+    resize: vertical;
+}
+
+form button {
+    border: 1px solid var(--dark-color);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    margin: 0 auto;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.253);
+    color: var(--dark-color);
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: var(--dark-color);
+    color: var(--lightest-color);
+    box-shadow: 3px 2px 2px rgba(0, 0, 0, 0.253);
+}
+/* map */
+section.map {
+    background-color: var(--mid-color);
+}
+
