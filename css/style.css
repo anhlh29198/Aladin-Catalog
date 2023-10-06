@@ -251,3 +251,7 @@ footer li.socialMedia a {
 li.socialMedia a:hover {
     color: var(--bright-color);
 }
+
+li.socialMedia a {
+    display: flex;
+}
