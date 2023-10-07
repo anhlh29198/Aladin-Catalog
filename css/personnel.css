@@ -3,28 +3,18 @@
     --mid-color: #E4EFE7;
     --light-color:#FAF1E6;
     --lightest-color: #FDFAF6;
-    --footer-color: #064420;
+    --footer-color: #00180a;
     --bright-color: #00c200;
     --gradient-color: linear-gradient(120deg, #FDFAF6, #A0C334);
 }
-
-section {
-    flex: 1;
-}
-
 /* heroes */
 .heroes {
-    background: url("../img/background/organization\ 320px.png");
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1rem 1.5rem 3rem 1.5rem;
+    padding: 2rem 1.5rem 6rem 1.5rem;
     gap: 3rem;
 }
-
-.heroes h2 span {
-    color: var(--lightest-color);
-} 
 
 .heroes > div + div + div {
     display: flex;
@@ -38,17 +28,21 @@ section.heroes p {
 section.heroes h2 {
     margin: 0 auto;
     color: var(--dark-color);
-    font-size: 2rem;
+    font-size: 3rem;
     margin-bottom: 1.5rem;
-    padding-left: 0.5rem;
     letter-spacing: 0.2rem;
     border: none;
 }
 
 section.heroes p {
-    font-size: 1.4rem;
+    font-size: 1.28rem;
     color: var(--dark-color);
     text-align: justify;
+}
+
+.buttonHeroes {
+    display: flex;
+    gap: 2rem;
 }
 
 section.heroes button {
@@ -59,7 +53,6 @@ section.heroes button {
     padding: 0.5rem;
     border: 1px solid var(--lightest-color);
     border-radius: 5px;
-    margin: 0 0.75rem;
     font-size: 1rem;
     font-weight: 600;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.253);
@@ -79,13 +72,23 @@ section.heroes img {
 }
 
 /* personnel */
+.personnel {
+    clip-path: polygon(0 0, 5% 0, 100% 1%, 100% 100%, 95% 100%, 0 98%);
+    border-radius: 1rem;
+}
+
 .personnel,
 .extracurricular {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1.5rem;
+    padding: 3rem 1.5rem;
     gap: 1.5rem;
+}
+
+.personnel h2,
+.extracurricular h2 {
+    font-size: 2rem;
 }
 
 .personnel img,
@@ -94,14 +97,10 @@ section.heroes img {
     border-radius: 5px;
 }
 
-.personnel img {
-    border: 1px solid var(--lightest-color);
-}
-
 #personnel p {
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     text-align: justify;
-    line-height: 1.75rem;
+    line-height: 2rem;
 }
 
 table {
@@ -113,9 +112,13 @@ table {
 caption {
     color: var(--lightest-color);
     text-align: center;
-    font-size: 1.2rem;
-    margin: 0.5rem 0;
+    font-size: 1.5rem;
+    margin: 3rem 0 1.5rem 0;
     border-bottom: 3px solid var(--lightest-color);
+}
+
+thead {
+    font-size: 1.175rem;
 }
 
 th {
@@ -130,11 +133,18 @@ tfoot {
     font-weight: 700;
 }
 
-.extracurricular img {
-    border: 1px solid var(--dark-color);
+#extracurricular p {
+    font-size: 1.25rem;
+    line-height: 3rem;
+    color: var(--dark-color);
 }
 
-#extracurricular p {
-    font-size: 1.1rem;
-    line-height: 2rem;
+.extracurricular li {
+    list-style: circle;
+}
+
+@media (min-width: 480px) {
+    section.heroes button {
+        font-size: 1.5rem;
+    }
 }

@@ -1,115 +1,123 @@
 //animate menu
-const hamburgerMenu = document.querySelector(".hamburgerMenu");
-hamburgerMenu.addEventListener("click", () => {
-    const hamburgerLine = document.querySelectorAll(".hamburgerMenu span");
-    hamburgerLine.forEach((line) => {
-        line.classList.toggle("active");
+function animateMenu() {
+    const hamburgerMenu = document.querySelector(".hamburgerMenu");
+    hamburgerMenu.addEventListener("click", () => {
+        const hamburgerLine = document.querySelectorAll(".hamburgerMenu span");
+        hamburgerLine.forEach((line) => {
+            line.classList.toggle("active");
+        });
+        const sidebar = document.querySelector(".sidebar");
+        sidebar.classList.toggle("active");
+        const main = document.querySelectorAll("section, footer");
+        main.forEach(section => {
+            section.classList.toggle("active");
+        });
     });
-    const sidebar = document.querySelector(".sidebar");
-    sidebar.classList.toggle("active");
-    const main = document.querySelectorAll("section, footer");
-    main.forEach(section => {
-        section.classList.toggle("active");
-    });
-});
+}
+animateMenu();
 //check page for menu
 function checkPage() {
     const sidebarMenu = document.querySelectorAll("li.sidebarMenu");
     const footerMenu = document.querySelectorAll("li.footerMenu");
+    const navMenu = document.querySelectorAll("li.navMenu");
     const pathArray = document.location.href.split("/");
     const location = pathArray[pathArray.length-1];
     switch (location) {
         case "index.html":
             sidebarMenu[0].classList.toggle("active");
             footerMenu[0].classList.toggle("active");
+            navMenu[0].classList.toggle("active");
             break;
         case "products.html":
             sidebarMenu[1].classList.toggle("active");
             footerMenu[1].classList.toggle("active");
+            navMenu[1].classList.toggle("active");
             break;
         case "organization.html":
             sidebarMenu[2].classList.toggle("active");
             footerMenu[2].classList.toggle("active");
+            navMenu[2].classList.toggle("active");
             break;
         case "contact.html":
             sidebarMenu[3].classList.toggle("active");
             footerMenu[3].classList.toggle("active");
+            navMenu[3].classList.toggle("active");
             break;
     }
 }
 checkPage();
 //technology logo touch slider
-const sliders = document.querySelectorAll(".slider");
-sliders.forEach(slider => {
-    const slides = Array.from(slider.querySelectorAll("div"));
+// const sliders = document.querySelectorAll(".slider");
+// sliders.forEach(slider => {
+//     const slides = Array.from(slider.querySelectorAll("div"));
 
-    let isDragging = false;
-    let startPos = 0;
-    let currentTranslate = 0;
-    let prevTranslate = 0;
-    let animationID;
-    let currentIndex = 0;
+//     let isDragging = false;
+//     let startPos = 0;
+//     let currentTranslate = 0;
+//     let prevTranslate = 0;
+//     let animationID;
+//     let currentIndex = 0;
 
-    slides.forEach((slide, index) => {
-        const slideImage = slide.querySelector("img");
-        // disable default image drag
-        slideImage.addEventListener("dragstart", (e) => e.preventDefault());
-        // pointer events
-        slide.addEventListener("pointerdown", pointerDown(index));
-        slide.addEventListener("pointerup", pointerUp);
-        slide.addEventListener("pointerleave", pointerUp);
-        slide.addEventListener("pointermove", pointerMove);
-    });
-    // make responsive to changes
-    slider.addEventListener("resize", setPositionByIndex);
+//     slides.forEach((slide, index) => {
+//         const slideImage = slide.querySelector("img");
+//         // disable default image drag
+//         slideImage.addEventListener("dragstart", (e) => e.preventDefault());
+//         // pointer events
+//         slide.addEventListener("pointerdown", pointerDown(index));
+//         slide.addEventListener("pointerup", pointerUp);
+//         slide.addEventListener("pointerleave", pointerUp);
+//         slide.addEventListener("pointermove", pointerMove);
+//     });
+//     // make responsive to changes
+//     slider.addEventListener("resize", setPositionByIndex);
 
-    window.oncontextmenu = function (event) {
-        event.preventDefault();
-        event.stopPropagation();
-        return false;
-    }
-    function pointerDown(index) {
-        return function (e) {
-            currentIndex = index;
-            startPos = e.clientX;
-            isDragging = true;
-            animationID = requestAnimationFrame(animation);
-            slider.classList.add('grabbing');
-        }
-    }
-    function pointerMove(e) {
-        if (isDragging) {
-            const currentPos = e.clientX;
-            currentTranslate = prevTranslate + currentPos - startPos;
-        }
-    }
-    function pointerUp() {
-        cancelAnimationFrame(animationID);
-        isDragging = false;
-        const movedBy = currentTranslate - prevTranslate;
+//     window.oncontextmenu = function (event) {
+//         event.preventDefault();
+//         event.stopPropagation();
+//         return false;
+//     }
+//     function pointerDown(index) {
+//         return function (e) {
+//             currentIndex = index;
+//             startPos = e.clientX;
+//             isDragging = true;
+//             animationID = requestAnimationFrame(animation);
+//             slider.classList.add('grabbing');
+//         }
+//     }
+//     function pointerMove(e) {
+//         if (isDragging) {
+//             const currentPos = e.clientX;
+//             currentTranslate = prevTranslate + currentPos - startPos;
+//         }
+//     }
+//     function pointerUp() {
+//         cancelAnimationFrame(animationID);
+//         isDragging = false;
+//         const movedBy = currentTranslate - prevTranslate;
         
-        // if moved enough negative then snap to next slide if there is one
-        if (movedBy < -100 && currentIndex < slides.length - 1) currentIndex++;
+//         // if moved enough negative then snap to next slide if there is one
+//         if (movedBy < -100 && currentIndex < slides.length - 1) currentIndex++;
     
-        // if moved enough positive then snap to previous slide if there is one
-        if (movedBy > 100 && currentIndex > 0) currentIndex--;
-        setPositionByIndex();
+//         // if moved enough positive then snap to previous slide if there is one
+//         if (movedBy > 100 && currentIndex > 0) currentIndex--;
+//         setPositionByIndex();
     
-        slider.classList.remove('grabbing');
-    }
-    function animation() {
-        setSliderPosition();
-        if (isDragging) requestAnimationFrame(animation);
-    }
-    function setPositionByIndex() {
-        currentTranslate = currentIndex * -slider.getBoundingClientRect().width;
-        prevTranslate = currentTranslate;
-        setSliderPosition();
-    }
-    function setSliderPosition() {
-        slider.style.transform = `translateX(${currentTranslate}px)`;
-    }
-});
+//         slider.classList.remove('grabbing');
+//     }
+//     function animation() {
+//         setSliderPosition();
+//         if (isDragging) requestAnimationFrame(animation);
+//     }
+//     function setPositionByIndex() {
+//         currentTranslate = currentIndex * -slider.getBoundingClientRect().width;
+//         prevTranslate = currentTranslate;
+//         setSliderPosition();
+//     }
+//     function setSliderPosition() {
+//         slider.style.transform = `translateX(${currentTranslate}px)`;
+//     }
+// });
 // fallback for touch slider
 // const containers = document.querySelectorAll(".container");
 // containers.forEach(container => {
@@ -142,10 +150,11 @@ sliders.forEach(slider => {
 //         });
 //     });
 // });
+
 //partner-logo auto play
 function autoPartnerLogo() {
-    const slides = document.querySelectorAll(".partner-logo");
-    const interval = 5000;
+    const slides = document.querySelectorAll(".partner-logo.smallScreen");
+    const interval = 2000;
     let i = 0;
     let slideInterval = setInterval(nextLogo, interval);
     function nextLogo() {
@@ -162,80 +171,86 @@ function autoPartnerLogo() {
 }
 autoPartnerLogo();
 //product slide
-const slideShows = document.querySelectorAll(".slideShow");
-slideShows.forEach((slideShow) => {
-    const interval = 5000;
-    let i = 0;
-    let slideInterval = setInterval(next, interval);
-    const slides = slideShow.querySelectorAll(".slide");
-    const navigation = slideShow.querySelectorAll("button.navigation");
-    const leftBtn = slideShow.querySelector(".leftArrow");
-    const rightBtn = slideShow.querySelector(".rightArrow");
-    function next() {
-        navigation.forEach(btn => {
-            btn.classList.remove("show");
-        });
-        if (i < slides.length - 1) {
-            i++;
-        }
-        else {
-            i = 0;
-        }
-        slides.forEach((slide) => {
-            slide.style.transform =  `translate(-${i*100}%)`;
-        });
-        navigation[i].classList.add("show");
-    }
-    function prev() {
-        navigation.forEach(btn => {
-            btn.classList.remove("show");
-        });
-        if (i > 0) {
-            i--;
-        }
-        else {
-            i = slides.length - 1;
-        }
-        slides.forEach((slide) => {
-            slide.style.transform =  `translate(-${i*100}%)`;
-        });
-        navigation[i].classList.add("show");
-    }
-    leftBtn.addEventListener("click", () => {
-        prev();
-        clearInterval(slideInterval);
-        slideInterval = setInterval(next, interval);
-    });
-    rightBtn.addEventListener("click", () => {
-        next();
-        clearInterval(slideInterval);
-        slideInterval = setInterval(next, interval);
-    });
-    navigation.forEach((btn, index) => {
-        navigation[index].addEventListener("click", () => {
-            navigation.forEach((btn) => {
+function productSlide() {
+    const slideShows = document.querySelectorAll(".slideShow");
+    const products = document.querySelectorAll(".product");
+    slideShows.forEach((slideShow, index) => {
+        const interval = 5000;
+        let i = 0;
+        let slideInterval = setInterval(next, interval);
+        const slides = slideShow.querySelectorAll(".slide");
+        const navigation = slideShow.querySelectorAll("button.navigation");
+        // const leftBtn = Array.from(document.querySelectorAll(".leftArrow"));
+        // const rightBtn = Array.from(document.querySelectorAll(".rightArrow"));
+        const leftBtn = products[index].querySelector(".leftArrow");
+        const rightBtn = products[index].querySelector(".rightArrow");
+        function next() {
+            navigation.forEach(btn => {
                 btn.classList.remove("show");
             });
+            if (i < slides.length - 1) {
+                i++;
+            }
+            else {
+                i = 0;
+            }
             slides.forEach((slide) => {
-                i = index;
-                slide.style.transform =  `translate(-${index*100}%)`;
+                slide.style.transform =  `translate(-${i*100}%)`;
             });
-            navigation[index].classList.add("show");
+            navigation[i].classList.add("show");
+        }
+        function prev() {
+            navigation.forEach(btn => {
+                btn.classList.remove("show");
+            });
+            if (i > 0) {
+                i--;
+            }
+            else {
+                i = slides.length - 1;
+            }
+            slides.forEach((slide) => {
+                slide.style.transform =  `translate(-${i*100}%)`;
+            });
+            navigation[i].classList.add("show");
+        }
+        leftBtn.addEventListener("click", () => {
+            prev();
             clearInterval(slideInterval);
             slideInterval = setInterval(next, interval);
         });
-    });
-    const images = slideShow.querySelectorAll("img");
-    images.forEach((image) => {
-        image.addEventListener("pointerover", () => {
+        rightBtn.addEventListener("click", () => {
+            next();
             clearInterval(slideInterval);
+            slideInterval = setInterval(next, interval);
         });
+        navigation.forEach((btn, index) => {
+            navigation[index].addEventListener("click", () => {
+                navigation.forEach((btn) => {
+                    btn.classList.remove("show");
+                });
+                slides.forEach((slide) => {
+                    i = index;
+                    slide.style.transform =  `translate(-${index*100}%)`;
+                });
+                navigation[index].classList.add("show");
+                clearInterval(slideInterval);
+                slideInterval = setInterval(next, interval);
+            });
+        });
+        const images = slideShow.querySelectorAll("img");
+        images.forEach((image) => {
+            image.addEventListener("pointerover", () => {
+                clearInterval(slideInterval);
+            });
 
-        image.addEventListener("pointerout", () => {
-            slideInterval = setInterval(next, interval);
+            image.addEventListener("pointerout", () => {
+                slideInterval = setInterval(next, interval);
+            });
         });
     });
-});
+}
+productSlide();
 // form validation
 function formValidation() {
     const formInputs = document.querySelectorAll(".form-input");

@@ -3,7 +3,7 @@
     --mid-color: #E4EFE7;
     --light-color:#FAF1E6;
     --lightest-color: #FDFAF6;
-    --footer-color: #064420;
+    --footer-color: #00180a;
     --bright-color: #00c200;
     --gradient-color: linear-gradient(120deg, #FDFAF6, #A0C334);
 }
@@ -16,19 +16,20 @@ section a {
 }
 
 section > h2,
-section.heroes ~ section a {
+main a {
     border-bottom: 3px solid var(--mid-color);
 }
 
 section:nth-child(odd),
 section:nth-child(odd) > h2,
-section.heroes ~ section:nth-child(odd) a {
+main section:nth-child(odd) a {
     background-color: var(--mid-color);
     color: var(--dark-color);
 }
 
 section:nth-child(odd) > h2,
-section.heroes ~ section:nth-child(odd) a {
+section:nth-child(odd) > h2,
+main section:nth-child(odd) a {
     border-bottom: 3px solid var(--dark-color);
 }
 
@@ -41,17 +42,24 @@ section {
 
 /* heroes */
 .heroes {
-    background: url("../img/background/products\ 320px.png");
-    background-size: cover;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1.25rem 1.5rem 3rem 1.5rem;
+    padding: 3rem 2rem 5rem 2rem;
     gap: 3rem;
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 100% 99%, 5% 100%, 0 100%);
+    border-bottom-left-radius: 1rem;
 }
 
-.heroes > div + div {
+.heroes > div {
     display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.buttonHeroes {
+    display: flex;
+    justify-content: center;
 }
 
 section.heroes h2,
@@ -60,10 +68,8 @@ section.heroes p {
 }
 
 section.heroes h2 {
-    color: var(--dark-color);
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    padding-left: 0.5rem;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
 }
 
 section.heroes h2 span {
@@ -71,8 +77,13 @@ section.heroes h2 span {
 }
 
 section.heroes p {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     text-align: justify;
+}
+
+.buttonHeroes {
+    display: flex;
+    gap: 2rem;
 }
 
 section.heroes button {
@@ -80,10 +91,10 @@ section.heroes button {
     outline-style: none;
     color: var(--lightest-color);
     background-color: var(--dark-color);
-    padding: 0.5rem;
+    padding:0.5rem 0.75rem;
     border: 1px solid var(--lightest-color);
     border-radius: 5px;
-    margin: 0 1rem;
+    /* margin: 0 1rem; */
     font-size: 1rem;
     font-weight: 600;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.253);
@@ -97,28 +108,46 @@ section.heroes button:hover {
 }
 
 section.heroes img {
+    margin-bottom: 1rem;
     width: 100%;
     border-radius: 5px;
-    border: 3px solid var(--dark-color);
+    box-shadow: 3px 2px 2px rgba(0, 0, 0, 0.253);
 }
 /* products */
+.business {
+    clip-path: polygon(0 0, 100% 1%, 100% 99%, 0% 100%);
+    border-radius: 1rem;
+}
+
+.entertainment h2,
+.services h2,
+.business h2 {
+    margin: 3rem auto;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.product {
+    display: flex;
+}
+
 section.heroes ~ section h2,
 section h3,
 .slide > div {
-    margin: 0.5rem 1.5rem;
+    margin: 1rem 1.5rem;
 }
 
 section.heroes ~ section h2 {
-    font-size: 1.45rem;
+    font-size: 2rem;
 }
 
 .slide h3 {
     margin: 0.5rem 0;
-    font-size: 1.25rem;
+    font-size: 1.75rem;
 }
 
 .slide p {
-    font-size: 1.15rem;
+    font-size: 1.5rem;
     text-align: justify;
 }
 
@@ -128,19 +157,26 @@ section.heroes ~ section h2 {
     width: 100%;
     height: 100%;
     overflow: hidden;
+    padding-bottom: 1rem;
 }
 
 .slide {
+    padding:0 1rem;
     width: 100%;
     height: 100%;
     flex-shrink: 0;
     transition: transform 0.5s ease-in-out;
 }
 
+.slide div {
+    margin: 0;
+}
+
 .slide img {
-    border-radius: 0.25rem;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
     width: 100%;
-    border: 3px solid var(--mid-color);
+    box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.521);
 }
 
 section.heroes ~ section:nth-child(odd) a:hover,
@@ -148,18 +184,13 @@ section.heroes ~ section:nth-child(odd) a:hover,
     color: var(--bright-color);
 }
 
-.entertainment img,
-.services img {
-    border-radius: 1rem;
-    border: 3px solid var(--dark-color);
-}
-
 .leftArrow,
 .rightArrow {   
-    font-size: 40px;
-    position: absolute;
+    font-size: 24px;
     display: flex;
-    top: 20%;
+    height: fit-content;
+    margin-top: 25%;
+    /* top: 20%; */
     color: var(--dark-color);
     background-color: #00000000;
     transition: all 0.2s ease-in-out;
@@ -168,17 +199,38 @@ section.heroes ~ section:nth-child(odd) a:hover,
     cursor: pointer;
 }
 
+.leftArrow ion-icon,
+.rightArrow ion-icon {
+    padding: 1rem 0;
+}
+
 .leftArrow:hover,
 .rightArrow:hover {
     opacity: 1;
     outline: none;
     color: var(--dark-color);
-    border: 1px solid var(--dark-color);
-    
+    border: 1px solid var(--dark-color);  
+}
+
+.business .leftArrow,
+.business .rightArrow {
+    color: var(--lightest-color);
+}
+
+.business .leftArrow:hover,
+.business .rightArrow:hover {
+    color: var(--lightest-color);
+    border: 1px solid var(--lightest-color);
 }
 
 .leftArrow:active,
 .rightArrow:active {
+    background-color: var(--dark-color);
+    color: var(--lightest-color);
+}
+
+.business .leftArrow:active,
+.business .rightArrow:active {
     background-color: var(--lightest-color);
     color: var(--dark-color);
 }
@@ -224,4 +276,97 @@ button.navigation:hover {
 button.navigation.show {
     background-color: var(--dark-color);
     transform: scale(1.3);
+}
+
+@media (min-width: 480px) {
+    section.heroes button {
+        font-size: 1.5rem;
+    }
+}
+
+@media (min-width: 720px) {
+    /* heroes */
+    .heroes {
+        flex-direction: row;
+        align-items: center;
+        clip-path: polygon(0 0, 100% 0, 100% 50%, 100% 100%, 0% 100%, 0 100%);
+        border-bottom-left-radius: 0;
+    }
+
+    .buttonHeroes {
+        justify-content: start;
+        gap: 2rem;
+    }
+
+    .heroes > div + div {
+        width: 75%;
+    }
+    
+    section.heroes button {
+        font-size: 1.5rem;
+    }
+    
+    section.heroes img {
+        margin-bottom: 0;
+    }
+    /* products */
+    main {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .business {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        border-radius: 0rem;
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+    }
+
+    .entertainment,
+    .business,
+    .services {
+        width: 33%;
+        margin: 0;
+    }
+
+    main h2,
+    section h3,
+    .slide > div {
+        margin: 2rem 0;
+    }
+
+    .entertainment h2,
+    .services h2 {
+        text-align: center;
+        font-size: 2rem;
+    }
+
+    .business h2 {
+        margin: 0 auto;
+        margin-top: 5rem;
+        font-size: 2rem;
+    }
+
+    .slide h3 {
+        margin: 0.5rem 0;
+        font-size: 1.75rem;
+    }
+
+    .leftArrow,
+    .rightArrow {   
+        font-size: 32px;
+        margin-top: 25%;
+    }
+}
+
+@media (min-width: 1280px) {
+    .heroes > div + div {
+        width: 40%;
+    }
+
+    main {
+        display: flex;
+        justify-self: center;
+    }
 }
