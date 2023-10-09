@@ -54,6 +54,15 @@ legend h2 {
     gap: 3rem;
 }
 
+.contact a {
+    color: var(--lightest-color);
+    text-decoration: none;
+}
+
+.contact a:hover {
+    color: var(--bright-color);
+}
+
 ul.info {
     display: flex;
     flex-direction: column;

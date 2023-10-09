@@ -238,7 +238,7 @@ function onPageScroll() {
     });
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
-            entry.target.classList.add("show", entry.isIntersecting);
+            entry.target.classList.toggle("show", entry.isIntersecting);
         });
     });
     const hidden = document.querySelectorAll(".hidden");
