@@ -5,19 +5,25 @@
     --lightest-color: #FDFAF6;
     --footer-color: #00180a;
     --bright-color: #00c200;
-    --gradient-color: linear-gradient(120deg, #FDFAF6, #A0C334);
+}
+
+img {
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.329);
 }
 /* heroes */
 .heroes {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2rem 1.5rem 6rem 1.5rem;
+    padding: 2rem 2rem 6rem 2rem;
     gap: 3rem;
 }
 
-.heroes > div + div + div {
+.heroes > div + div {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
 }
 
 section.heroes h2,
@@ -35,7 +41,7 @@ section.heroes h2 {
 }
 
 section.heroes p {
-    font-size: 1.28rem;
+    font-size: 1.25rem;
     color: var(--dark-color);
     text-align: justify;
 }
@@ -70,20 +76,14 @@ section.heroes img {
     border-radius: 5px;
     border: 3px solid var(--dark-color);
 }
-
 /* personnel */
-.personnel {
-    clip-path: polygon(0 0, 5% 0, 100% 1%, 100% 100%, 95% 100%, 0 98%);
-    border-radius: 1rem;
-}
-
 .personnel,
 .extracurricular {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 3rem 1.5rem;
-    gap: 1.5rem;
+    padding: 3rem 2rem 5rem 2rem;
+    gap: 3rem;
 }
 
 .personnel h2,
@@ -101,19 +101,29 @@ section.heroes img {
     font-size: 1.5rem;
     text-align: justify;
     line-height: 2rem;
+    background-color: var(--lightest-color);
+    border-radius: 1rem;
+    border-top-left-radius: 0;
+    color: var(--dark-color);
+    padding: 1rem;
+}
+
+#table {
+    width: 100%;
 }
 
 table {
     background-color: var(--lightest-color);
     color: var(--dark-color);
     border-spacing: 0.75rem;
+    width: 100%;
 }
 
 caption {
     color: var(--lightest-color);
     text-align: center;
     font-size: 1.5rem;
-    margin: 3rem 0 1.5rem 0;
+    margin-bottom: 2rem;
     border-bottom: 3px solid var(--lightest-color);
 }
 
@@ -133,6 +143,10 @@ tfoot {
     font-weight: 700;
 }
 
+#table + div {
+    width: 100%;
+}
+/* extracurricular */
 #extracurricular p {
     font-size: 1.25rem;
     line-height: 3rem;
@@ -142,9 +156,154 @@ tfoot {
 .extracurricular li {
     list-style: circle;
 }
-
+/* query media */
 @media (min-width: 480px) {
     section.heroes button {
         font-size: 1.5rem;
     }
 }
+
+@media (min-width: 720px) {
+    /* heroes */
+    .heroes {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+        gap: 3rem;
+    }
+
+    .buttonHeroes {
+        display: flex;
+        gap: 3rem;
+    }
+
+    section.heroes button {
+        padding: 0.5rem 0.75rem;
+        font-size: 1.5rem;
+    }
+
+    section.heroes > div img {
+        width: 80%;
+    }
+    /* personnel */
+    .personnel {
+        display: grid;
+        grid-template: 0.1fr 1fr 1fr/ 1fr 1fr;
+        align-items: start;
+        justify-content: center;
+        gap: 3rem;
+    }
+
+    .personnel h2 {
+        margin: 3rem auto;
+        grid-area: 1 / 1 / 2 / 3;
+    }
+
+    .personnel > div {
+        width: 100%;
+        order: 1;
+    }
+
+    .personnel p {
+        order: 2;
+    }
+
+    table {
+        width: 100%;
+        height: 100%;
+    }
+
+    #table {
+        grid-area: 2 / 2 / 3 / -1;
+        width: 90%;
+        height: 80%;
+    }
+
+    #table + div {
+        width: 90%;
+        margin: 0 auto;
+        order: 3;
+    }
+
+    .personnel div {
+        width: 90%;
+        margin: 0 auto;
+    }
+    /* extracurricular */
+    .extracurricular {
+        display: grid;
+        grid-template: 0.1fr 1fr / 1fr 1fr;
+        padding: 2rem 2rem 4rem 4rem;
+    }
+
+    .extracurricular h2 {
+        grid-area: 1 / 1 / 2 / 3;
+        margin: 3rem auto;
+    }
+
+    .extracurricular img {
+        order: 1;
+    }
+
+    #personnel p {
+        font-size: 1.25rem;
+    }
+
+    #extracurricular p {
+        font-size: 1.5rem;
+        line-height: 2.5;
+    }
+    /* slide in */
+    .personnel > div.hidden {
+        transform: translateY(-100%);
+    }
+
+    .personnel > div.show {
+        transform: translateY(0);
+    }
+
+    #personnel.hidden,
+    #extracurricular.hidden {
+        transform: translateX(-100%);
+    }
+
+    #personnel.show,
+    #extracurricular.show {
+        transform: translateX(0);
+    }
+
+    #table.hidden,
+    .extracurricular img.hidden {
+        transform: translateX(100%);
+    }
+
+    #table + div.hidden {
+        transform: translateY(100%);
+    }
+
+    #table + div.show{
+        transform: translateY(0);
+    }
+
+    #table.show,
+    .extracurricular img.show {
+        transform: translateX(0);
+    }
+}
+/* overlay */
+.hidden {
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 1s ease-in-out;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion) {
+        .hidden {
+            transition: none;
+        }
+    }

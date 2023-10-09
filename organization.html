@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aladintech Personnel</title>
+    <link rel="icon" href="./img/logo-aladintech 1.png">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/personnel.css">
     <title>Aladintech 2023 Company Personnel</title>
@@ -11,27 +12,27 @@
 <body>
     <!-- navbar -->
     <nav>
-        <div class="logoCompany">
-            <a href="./index.html"><img src="./img/logo-aladintech 1.png" alt="logo aladintech company"></a>
-            <p>Aladin Technology Company</p>
-        </div>
-        <div class="hamburgerMenu">
-            <span class="hamburger-line1"></span>
-            <span class="hamburger-line2"></span>
-            <span class="hamburger-line3"></span>
-        </div>
-        <div class="navMenu">
-            <ul>
-                <li class="navMenu"><a href="./index.html">Home</a></li>
-                <li class="navMenu"><a href="./products.html">Products</a></li>
-                <li class="navMenu"><a href="./organization.html">Personnel</a></li>
-                <li class="navMenu"><a href="./contact.html">Contact</a></li>
-            </ul>
+        <div class="navbar">
+            <div class="logoCompany">
+                <a href="./index.html"><img src="./img/logo-aladintech 1.png" alt="logo aladintech company"></a>
+                <p>Aladin Technology Company</p>
+            </div>
+            <div class="hamburgerMenu">
+                <span class="hamburger-line1"></span>
+                <span class="hamburger-line2"></span>
+                <span class="hamburger-line3"></span>
+            </div>
+            <div class="navMenu">
+                <ul>
+                    <li class="navMenu"><a href="./index.html">Home</a></li>
+                    <li class="navMenu"><a href="./products.html">Products</a></li>
+                    <li class="navMenu"><a href="./organization.html">Personnel</a></li>
+                    <li class="navMenu"><a href="./contact.html">Contact</a></li>
+                </ul>
+            </div>
         </div>
         <!-- sidebar -->
         <div class="sidebar">
-            <img src="./img/logo-aladintech 1.png" alt="logo aladintech company">
-            <span></span>
             <div class="sidebarMenu">
                 <ul>
                     <li class="sidebarMenu"><a href="./index.html">Home</a></li>
@@ -57,25 +58,29 @@
             <img src="./img/heroes/personnel.gif" alt="gif of personnel">
         </div>
         <div>
-            <h2>Join Our Family </h2>
-            <p>Explore our diverse team of professionals and individuals. See if you want to be part of our company.</p>
-        </div>
-        <div class="buttonHeroes">
-            <a href="https://aladintech.co/career"><button>We're Hiring</button></a>
-            <a href="./contact.html"><button>Contact Us</button></a>
+            <div>
+                <h2>Join Our Family </h2>
+                <p>Explore our diverse team of professionals and individuals. See if you want to be part of our company.</p>
+            </div>
+            <div class="buttonHeroes">
+                <a href="https://aladintech.co/career"><button>We're Hiring</button></a>
+                <a href="./contact.html"><button>Contact Us</button></a>
+            </div>
         </div>
     </section>
     <!-- personnel -->
     <section class="personnel">
         <h2>Human Resources</h2>
-        <img src="./img/personnel/office.jfif" alt="aladin office">
-        <div id="personnel">
+        <div class="hidden">
+            <img src="./img/personnel/office.jfif" alt="aladin office">
+        </div>
+        <div class="hidden" id="personnel">
             <p>The staffs have a positive attitude, qualifications and skills suitable fort each
                 job position, among them there are experts in each field. Dynamic working environment,
                 every individual has the opportunity to develop and be worthy of evalution based on work results.
             </p>
         </div>
-        <div id="table">
+        <div class="hidden" id="table">
             <table>
                 <caption>Human resources by functional department (In 2022)</caption>
                 <thead>
@@ -121,12 +126,15 @@
                 </tfoot>
             </table>
         </div>
+        <div class="hidden">
+            <img src="./img/personnel/personnel2.jpg" alt="aladin office">
+        </div>
     </section>
     <!-- extra-curricular -->
     <section class="extracurricular">
         <h2>Extracurricular Activities</h2>
-        <img src="./img/personnel/extra-curricular.webp" alt="aladin employees on vacation">
-        <div id="extracurricular">
+        <img class="hidden" src="./img/personnel/extra-curricular.webp" alt="aladin employees on vacation">
+        <div class="hidden" id="extracurricular">
             <ul>
                 <li><p>Sports: Football, table tennis, ...</p></li>
                 <li><p>Arts: Annual performance competition</p></li>

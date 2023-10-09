@@ -5,12 +5,9 @@
     --lightest-color: #FDFAF6;
     --footer-color: #00180a;
     --bright-color: #00c200;
-    --gradient-color: linear-gradient(120deg, #FDFAF6, #A0C334);
 }
-
 /* heroes */
 .heroes {
-    /* background-color: var(--mid-color); */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -43,11 +40,6 @@ section.heroes img {
     border-radius: 5px;
     border: 3px solid var(--dark-color);
 }
-
-span {
-    color: red;
-}
-
 /* contact */
 .contact h2,
 legend h2 {
@@ -55,13 +47,11 @@ legend h2 {
 }
 
 .contact {
-    clip-path: polygon(0 4%, 95% 0, 100% 0, 100% 97%, 5% 100%, 0 100%);
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 4rem 1.5rem;
     gap: 3rem;
-    border-radius: 1rem;
 }
 
 ul.info {
@@ -80,10 +70,16 @@ li.info {
 li.info ion-icon {
     flex-shrink: 0;
 }
-
 /* form */
 .form {
-    margin: 2rem 0;
+    padding: 3rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+span {
+    color: #ff0000;
 }
 
 fieldset {
@@ -114,19 +110,26 @@ legend h2 {
 }
 
 .form-input input {
-    line-height: 1.25rem;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    border: none;
 }
 
 .form-input input.invalid {
-    border: 1px solid red;
+    border: 1.5px solid red;
 }
 
 .form-input input.valid {
-    border: 1px solid green;
+    border: 1.5px solid var(--bright-color);
 }
 
 .form-input input:focus {
     outline: 0;
+    border: 1.5px solid #2424ff; 
+}
+
+.form-input input[type="checkbox"] {
+    width: 1.5rem;
 }
 
 .form-input.check {
@@ -134,8 +137,13 @@ legend h2 {
     gap: 0.5rem;
 }
 
-textarea {
+textarea {  
     resize: vertical;
+    font-size: 1rem;
+}
+
+textarea:focus {
+    outline: none;
 }
 
 form button {
@@ -163,4 +171,88 @@ section.map {
 iframe {
     width: 100%;
 }
+/* media query */
+@media (min-width: 720px) {
+    /* heroes */
+    .heroes {
+        justify-content: space-evenly;
+        flex-direction: row;
+        padding: 5rem 1.5rem 4rem 1.5rem;
+        gap: 3rem;
+    }
 
+    section.heroes h2 {
+        margin: 0;
+        margin-bottom: 2rem;
+        margin-right: auto;
+    }
+
+    .heroes > div {
+        width: 45%;
+    }
+
+    .heroes > div + div {
+        width: 40%;
+    }
+
+    form {
+        width: 50%;
+    }
+
+    form.hidden {
+        transform: translateX(-100%);
+    }
+
+    form.show {
+        transform: translateX(0);
+    }
+}
+
+@media (min-width: 1280px) {
+    body {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    nav,
+    .heroes,
+    .contact,
+    footer {
+        width: 100%;
+        flex-shrink: 0;
+    }
+
+    .form {
+        width: 50%;
+    }
+
+    form {
+        width: 100%;
+    }
+
+    .map {
+        width: 50%;
+    }
+
+    .map iframe {
+        height: 100%;
+    }
+}
+
+/* overlay */
+.hidden {
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 1s ease-in-out;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion) {
+        .hidden {
+            transition: none;
+        }
+    }

@@ -1,7 +1,8 @@
-//animate menu
+//animate hamburger menu
 function animateMenu() {
     const hamburgerMenu = document.querySelector(".hamburgerMenu");
     hamburgerMenu.addEventListener("click", () => {
+        hamburgerMenu.classList.toggle("active");
         const hamburgerLine = document.querySelectorAll(".hamburgerMenu span");
         hamburgerLine.forEach((line) => {
             line.classList.toggle("active");
@@ -12,6 +13,19 @@ function animateMenu() {
         main.forEach(section => {
             section.classList.toggle("active");
         });
+        // window resize hide hamburger menu
+        window.addEventListener("resize", () => {
+            if (window.innerWidth >= 720) {
+                hamburgerMenu.classList.remove("active");
+                hamburgerLine.forEach((line) => {
+                    line.classList.remove("active");
+                });
+                sidebar.classList.remove("active");
+                main.forEach(section => {
+                    section.classList.remove("active");
+                });
+            }
+        }); 
     });
 }
 animateMenu();
@@ -118,43 +132,10 @@ checkPage();
 //         slider.style.transform = `translateX(${currentTranslate}px)`;
 //     }
 // });
-// fallback for touch slider
-// const containers = document.querySelectorAll(".container");
-// containers.forEach(container => {
-//     const leftArrow = container.querySelector(".arrowLeft");
-//     const rightArrow = container.querySelector(".arrowRight");
-//     const slides = container.querySelector(".slider").querySelectorAll("div");
-
-//     let i = 0;
-//     leftArrow.addEventListener("click", () => {
-//         if (i > 0) {
-//             i--;
-//         }
-//         else {
-//             i = slides.length - 1;
-//         }
-//         slides.forEach((slide) => {
-//             slide.style.transform =  `translate(-${i*100}%)`;
-//         });
-//     });
-
-//     rightArrow.addEventListener("click", () => {
-//         if (i < slides.length - 1) {
-//             i++;
-//         }
-//         else {
-//             i = 0;
-//         }
-//         slides.forEach((slide) => {
-//             slide.style.transform =  `translate(-${i*100}%)`;
-//         });
-//     });
-// });
-
 //partner-logo auto play
 function autoPartnerLogo() {
     const slides = document.querySelectorAll(".partner-logo.smallScreen");
-    const interval = 2000;
+    const interval = 5000;
     let i = 0;
     let slideInterval = setInterval(nextLogo, interval);
     function nextLogo() {
@@ -174,20 +155,16 @@ autoPartnerLogo();
 function productSlide() {
     const slideShows = document.querySelectorAll(".slideShow");
     const products = document.querySelectorAll(".product");
+    const sections = document.querySelectorAll(".overlay-here");
     slideShows.forEach((slideShow, index) => {
         const interval = 5000;
         let i = 0;
         let slideInterval = setInterval(next, interval);
         const slides = slideShow.querySelectorAll(".slide");
-        const navigation = slideShow.querySelectorAll("button.navigation");
-        // const leftBtn = Array.from(document.querySelectorAll(".leftArrow"));
-        // const rightBtn = Array.from(document.querySelectorAll(".rightArrow"));
         const leftBtn = products[index].querySelector(".leftArrow");
         const rightBtn = products[index].querySelector(".rightArrow");
+        // next slide
         function next() {
-            navigation.forEach(btn => {
-                btn.classList.remove("show");
-            });
             if (i < slides.length - 1) {
                 i++;
             }
@@ -197,12 +174,9 @@ function productSlide() {
             slides.forEach((slide) => {
                 slide.style.transform =  `translate(-${i*100}%)`;
             });
-            navigation[i].classList.add("show");
         }
+        // previous slide
         function prev() {
-            navigation.forEach(btn => {
-                btn.classList.remove("show");
-            });
             if (i > 0) {
                 i--;
             }
@@ -212,8 +186,8 @@ function productSlide() {
             slides.forEach((slide) => {
                 slide.style.transform =  `translate(-${i*100}%)`;
             });
-            navigation[i].classList.add("show");
         }
+        // navigate product slides
         leftBtn.addEventListener("click", () => {
             prev();
             clearInterval(slideInterval);
@@ -224,33 +198,53 @@ function productSlide() {
             clearInterval(slideInterval);
             slideInterval = setInterval(next, interval);
         });
-        navigation.forEach((btn, index) => {
-            navigation[index].addEventListener("click", () => {
-                navigation.forEach((btn) => {
-                    btn.classList.remove("show");
-                });
-                slides.forEach((slide) => {
-                    i = index;
-                    slide.style.transform =  `translate(-${index*100}%)`;
-                });
-                navigation[index].classList.add("show");
-                clearInterval(slideInterval);
-                slideInterval = setInterval(next, interval);
+        // click overlay to close it
+        const overlays = sections[index].querySelectorAll(".overlay");
+        overlays.forEach(overlay => {
+            overlay.addEventListener("click", () => {
+                overlay.style.display = "none";
             });
         });
+        // close overlay when width < 720px
+        window.addEventListener("resize", () => {
+            if (window.innerWidth < 720) {
+                overlays.forEach(overlay => {
+                    overlay.style.display = "none";
+                });
+            }
+        });
+        // mouse in image cause slideshow to pause, click image show overlay
         const images = slideShow.querySelectorAll("img");
-        images.forEach((image) => {
+        images.forEach((image, index) => {
             image.addEventListener("pointerover", () => {
                 clearInterval(slideInterval);
             });
-
             image.addEventListener("pointerout", () => {
                 slideInterval = setInterval(next, interval);
             });
+            image.addEventListener("click", () => {
+                if (window.innerWidth >= 720) {
+                    overlays[index].style.display = "block";
+                }
+            }); 
         });
     });
 }
 productSlide();
+// on page scroll
+function onPageScroll() {
+    window.addEventListener("load", () => {
+        hidden.forEach((element) => element.classList.remove("show"));
+    });
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            entry.target.classList.add("show", entry.isIntersecting);
+        });
+    });
+    const hidden = document.querySelectorAll(".hidden");
+    hidden.forEach((element) => observer.observe(element));
+}
+onPageScroll();
 // form validation
 function formValidation() {
     const formInputs = document.querySelectorAll(".form-input");
@@ -268,7 +262,6 @@ function formValidation() {
         formInputs.forEach(formInput => {
             const input = formInput.querySelector("input");
             const error = formInput.querySelector("span.error");
-
             if (input.value.length === 0 || input.value == null) {
                 switch (input.id) {
                     case "fb-link": 
@@ -277,17 +270,14 @@ function formValidation() {
                     case "message":
                     case "receive-mail":
                         return;
-
                     case "full-name":
                         input.className = "invalid";
                         error.textContent = "Your name is required";
                         break;
-
                     case "email":
                         input.className = "invalid";
                         error.textContent = "Your email is required";
                         break;
-                        
                     case "phone":
                         input.className = "invalid";
                         error.textContent = "Your phone number is required";
@@ -295,7 +285,6 @@ function formValidation() {
                 }
                 e.preventDefault();
             }
-
             if (input.className === "invalid") {
                 e.preventDefault();
             }  
@@ -378,3 +367,4 @@ function formValidation() {
     });
 }
 formValidation();
+

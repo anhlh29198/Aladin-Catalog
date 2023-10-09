@@ -12,47 +12,36 @@ h2 {
     margin: 1.5rem 0;
     text-align: center;
 }
-
 /* heroes */
 .heroes {
-    padding: 2rem 1.5rem;
+    padding: 3rem 1.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: clamp(0.5rem, 0.5rem + 10vw, 1.5rem);
+    gap: 1.5rem;
 }
 
 #cardDesign {
     background-color: var(--dark-color);
     position: relative;
-    padding: 7rem 1rem 2rem 1rem;
+    padding: 7rem 5rem 2rem 5rem;
     width: 100%;
     height: fit-content;
     border-top-left-radius: 1rem;
     border-bottom-right-radius: 25%;
     display: flex;
     justify-content: center;
-    animation: shadow 3s ease-in-out infinite alternate;
-}
-
-@keyframes shadow {
-    0% {
-        box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.363);
-    }
-
-    100% {
-        box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.363);
-    }
 }
 
 #designContainer {
     height: fit-content;
     display: flex;
     align-items: center;
+    width: 100%;
 }
 
 #cardDesign > #designContainer > img {
-    width: clamp(3.5rem, 3.5rem + 1vw, 4.5rem);
+    width: 3.5rem;
     position: absolute;
     top: 1.5rem;
     left: 1.5rem;
@@ -68,7 +57,7 @@ h2 {
 }
 
 .heroes p {
-    padding: 1.75rem 0.5rem 0 0rem;
+    padding: 1.75rem 0.5rem 2rem 0rem;
     font-size: 1.75rem;
     font-weight: 500;
     text-align: justify;
@@ -86,16 +75,49 @@ h2 {
 .heroes p > span > a:hover {
     color: var(--bright-color);
 }
-/* core-values*/
-.core-values {
-    padding: 1.5rem 1.5rem 3rem 1.5rem;
+/* section-counter */
+.section-counter {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.card {
     display: flex;
     flex-direction: column;
     align-items: center;
+    box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.363);
+    padding: 1rem;
+    background-color: var(--dark-color);
+}
+
+.card p ion-icon {
+    font-size: 56px;
+}
+
+.card h3,
+.card p {
+    margin: 0 auto;
+    text-align: center;
+    padding: 0;
+    color: var(--lightest-color);
+    border: none;
+}
+/* core-values*/
+#core-values {
+    padding: 1.5rem 1.5rem 3rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
     gap: clamp(1.5rem, 1.5rem + 10vw, 3rem);
 }
 
-.core-values div {
+#core-values h2 {
+    margin: 2rem auto;
+}
+
+#core-values div {
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -103,7 +125,7 @@ h2 {
     transition: all 0.3s ease-in-out;
 }
 
-.core-values div h3 {
+#core-values div h3 {
     border: none;
     display: flex;
     align-items: center;
@@ -111,11 +133,11 @@ h2 {
     font-size: 1.5rem;
 }
 
-.core-values div h3 span{
+#core-values div h3 span{
     font-size: clamp(1.75rem, 1.75rem + 5vw, 3rem);
 }
 
-.core-values div p {
+#core-values div p {
     font-size: 1rem;
     text-align: justify;
     padding: 1rem;
@@ -125,27 +147,27 @@ h2 {
     width: 100%;
 }
 
-#c2 {
+.core-values:nth-child(3) {
     margin-left: 3%;
 }
 
-#c3 {
+.core-values:nth-child(4) {
     margin-left: 6%;
 }
 
-#c4 {
+.core-values:nth-child(5) {
     margin-left: 9%;
 }
 
-#c5 {
+.core-values:nth-child(6) {
     margin-left: 12%;
 }
 
-#c6 {
+.core-values:nth-child(7) {
     margin-left: 15%;
 }
 
-#c7 {
+.core-values:nth-child(8) {
     margin-left: 18%;
 }
 
@@ -178,7 +200,7 @@ h2 {
 
 .circle {
     display: flex;
-    align-items: start;
+    align-items: end;
     flex-direction: column;
     justify-content: center;
     width: 2.5rem;
@@ -196,13 +218,14 @@ h2 {
     font-size: clamp(1rem, 1rem + 1vw, 1.4rem);
     font-weight: 600;
     padding: 0.25rem;
-    margin-left: -8rem;
-    margin-right: 2.5rem;
+    margin-right: -10rem;
+    margin-left: 2.5rem;
+    text-align: end;
 }
 
 .circle:nth-child(even) div {
     text-align: end;
-    margin-right: -8rem;
+    margin-right: -10rem;
     margin-left: 2.5rem;
 }
 
@@ -217,15 +240,13 @@ h2 {
     height: 70rem;
     background-color: var(--dark-color);
     border-radius: 1rem;
-    margin: 0 auto;
+    margin-right: 7rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: clamp(10rem, 10rem + 10vw, 12rem);
 }
-
-
 /* technology*/
 .technology {
     background-color: var(--dark-color);
@@ -356,21 +377,21 @@ h2 {
 /* media query */
 @media (min-width: 480px) {
     .circle div {
-        margin-left: -11rem;
+        margin-right: -12rem;
     }
     
     .circle:nth-child(even) div {
-        margin-right: -11rem;
+        margin-right: -12rem;
     }
 }
 
 @media (min-width: 680px) {
     .circle div {
-        margin-left: -15rem;
+        margin-right: -16rem;
     }
     
     .circle:nth-child(even) div {
-        margin-right: -15rem;
+        margin-right: -16rem;
     }
 }
 
@@ -378,48 +399,90 @@ h2 {
     /* heroes */
     .heroes {
         padding: 2rem 3rem;
-        display: flex;
-        flex-direction: row-reverse;
-        justify-content: space-around;
+        display: grid;
+        grid-template: 2fr 1fr/ 65% 30%;
+        justify-content: center;
         align-items: center;
+        gap: 3rem;
+        grid-auto-rows: 100%;
     }
 
     #cardDesign {
-        width: 25%;
+        order: 2;
+        width: 100%;
+        padding: 7rem 2rem 2rem 2rem;
     }
 
     .heroes p {
+        order: 1;
         text-align: start;
-        width: 75%;
+        width: 100%;
         font-size: 1.5rem;
     }
 
     .heroes p > span > a {
         font-size: 2rem;
     }
+    /* section-counter */
+    .section-counter {
+        order: 3;
+        width: 100%;
+        flex-direction: row;
+        grid-column: span 2;
+        justify-content: space-evenly;
+        padding: 0 3rem;
+    }
+
+    .column {
+        width: 25%;
+        flex-shrink: 0;
+    }
+
+    .card h3,
+    .card p {
+        order: 1;
+        text-align: center;
+    }
     /* core-values*/
-    .core-values {
+    #core-values {
         padding: 5rem 2rem;
         display: grid;
         grid-template: 0.15fr repeat(4, 1fr) / 10fr 1fr 10fr;
         align-items: start;
     }
 
-    .core-values h2 {
+    #core-values h2 {
         margin: 0 auto;
         grid-area: 1 / 1 / 2 / 4;
     }
 
-    #c2,
-    #c3, 
+    /* #c2,
+    #c3,
     #c4,
     #c5,
-    #c6, 
-    #c7 {
+    #c6,
+    #c7, */
+    #core-values .core-values {
         margin-left: 0;
     }
 
-    .core-values div {
+    .core-values.hidden:nth-child(odd) {
+        transform: translateX(100%);
+    }
+
+    .core-values.hidden:nth-child(even) {
+        transform: translateX(-100%);
+    }
+    
+    .core-values.show:nth-child(odd) {
+        transform: translateX(0);
+    }
+
+    .core-values.show:nth-child(even) {
+        transform: translateX(0);
+    }
+
+    #core-values div {
         width: 100%;
     }
 
@@ -438,12 +501,53 @@ h2 {
         border-radius: 1rem;
     }
     /* roadmap white*/
+    .circle {
+        display: flex;
+        align-items: start;
+        flex-direction: column;
+        justify-content: center;
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
+        background-color: var(--dark-color);
+    }
+    
+    .circle:nth-child(even) {
+        align-items: end;
+    }
+    
     .circle div {
-        margin-left: -17rem;
+        font-weight: 600;
+        padding: 0.25rem;
+        margin-left: -20rem;
+        margin-right: 2.5rem;
+        text-align: start;
     }
     
     .circle:nth-child(even) div {
-        margin-right: -17rem;
+        text-align: end;
+        margin-right: -20rem;
+        margin-left: 2.5rem;
+    }
+
+    .line {
+        margin: 0 auto;
+    }
+
+    .circle.hidden:nth-child(odd) {
+        transform: translateX(100%);
+    }
+
+    .circle.hidden:nth-child(even) {
+        transform: translateX(-100%);
+    }
+    
+    .circle.show:nth-child(odd) {
+        transform: translateX(0);
+    }
+
+    .circle.show:nth-child(even) {
+        transform: translateX(0);
     }
     /* technology*/
     .language,
@@ -476,47 +580,62 @@ h2 {
 }
 
 @media (min-width: 1280px) {
-    /* heroes */
-    .heroes p {
-        width: 50%;
-    }
-
-    #cardDesign {
-        width: 15%;
-    }
     /* core-values*/
-    .core-values {
+    #core-values {
         grid-template: 0.15fr repeat(2, 1fr) / repeat(4, 1fr);
+        
     }
 
-    .core-values h2 {
+    #core-values h2 {
         grid-area: 1 / 1 / 2 / 5;
     }
 
-    #c2 {
-        transform: translateY(5%);
+    .core-values:nth-child(3) {
+        margin-top: 5%;
     }
     
-    #c3 {
-        transform: translateY(10%);
+    .core-values:nth-child(4) {
+        margin-top: 10%;
     }
     
-    #c4 {
-        transform: translateY(15%);
+    .core-values:nth-child(5) { 
+        margin-top: 15%;
     }
     
-    #c6 {
-        transform: translateY(5%);
+    .core-values:nth-child(7) {
+        margin-top: 5%;
     }
     
-    #c7 {
-        transform: translateY(10%);
+    .core-values:nth-child(8) {
+        margin-top: 10%;
     }
 
     .gridLine {
         width: 0;
         height: 0;
         grid-area: 3 / 4 / -1 / -1;
+    }
+
+    #core-values .core-values.hidden {
+        transform: translateX(-100%);
+    }
+    
+    #core-values .core-values.show {
+        transform: translateX(0);
+    }
+
+    #core-values .core-values.show:nth-child(3),
+    #core-values .core-values.show:nth-child(7) {
+        transition-delay: 100ms;
+    }
+
+    #core-values .core-values.show:nth-child(4),
+    #core-values .core-values.show:nth-child(8) {
+        transition-delay: 200ms;
+    }
+
+    #core-values .core-values.show:nth-child(5) {
+        transition-delay: 300ms;
     }
     /* roadmap white*/
     .line {
@@ -578,4 +697,37 @@ h2 {
     .circle:nth-child(even) .date {
         margin-bottom: 5rem;
     }
+
+    .line.hidden {
+        transform: translateX(-100%);
+    }
+
+    .line.show {
+        transform: translateX(0);
+    }
+
+    .line .circle.hidden {
+        transform: translateX(-100%);
+    }
+
+    .line.circle.show {
+        transform: translateX(0);
+    }
 }
+/* overlay */
+.hidden {
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 1s ease-in-out;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion) {
+        .hidden {
+            transition: none;
+        }
+    }
