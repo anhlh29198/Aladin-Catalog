@@ -8,7 +8,7 @@
 }
 
 img {
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.329);
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.329);
 }
 /* heroes */
 .heroes {
@@ -24,6 +24,7 @@ img {
     flex-direction: column;
     align-items: center;
     gap: 4rem;
+    max-width: 30rem;
 }
 
 section.heroes h2,
@@ -56,7 +57,7 @@ section.heroes button {
     outline-style: none;
     color: var(--lightest-color);
     background-color: var(--dark-color);
-    padding: 0.5rem;
+    padding: 0.5rem 0.75rem;
     border: 1px solid var(--lightest-color);
     border-radius: 5px;
     font-size: 1rem;
@@ -71,10 +72,15 @@ section.heroes button:hover {
     box-shadow: 3px 2px 2px rgba(0, 0, 0, 0.253);
 }
 
+.heroesImg {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 section.heroes img {
     width: 100%;
-    border-radius: 5px;
-    border: 3px solid var(--dark-color);
+    box-shadow: none;
 }
 /* personnel */
 .personnel,
@@ -84,6 +90,7 @@ section.heroes img {
     align-items: center;
     padding: 3rem 2rem 5rem 2rem;
     gap: 3rem;
+    overflow: hidden;
 }
 
 .personnel h2,
@@ -168,7 +175,7 @@ tfoot {
     .heroes {
         flex-direction: row;
         align-items: center;
-        justify-content: space-evenly;
+        justify-content: center;
         gap: 3rem;
     }
 
@@ -182,15 +189,24 @@ tfoot {
         font-size: 1.5rem;
     }
 
+    .heroes > div + div {
+        max-width: 40rem;
+    }
+
+    .heroes .heroesImg {
+        max-width: 40rem;
+    }
+
     section.heroes > div img {
-        width: 80%;
+        max-width: 30rem;
+        min-width: 20rem;
+        margin-right: auto;
     }
     /* personnel */
     .personnel {
         display: grid;
         grid-template: 0.1fr 1fr 1fr/ 1fr 1fr;
         align-items: start;
-        justify-content: center;
         gap: 3rem;
     }
 
@@ -199,12 +215,16 @@ tfoot {
         grid-area: 1 / 1 / 2 / 3;
     }
 
+    .personnel div {
+        max-width: 40rem;
+    }
+
     .personnel > div {
-        width: 100%;
+        margin-left: auto;
         order: 1;
     }
 
-    .personnel p {
+    #personnel {
         order: 2;
     }
 
@@ -217,23 +237,22 @@ tfoot {
         grid-area: 2 / 2 / 3 / -1;
         width: 90%;
         height: 80%;
+        margin: 0;
+        margin-right: auto;
     }
 
     #table + div {
         width: 90%;
-        margin: 0 auto;
+        margin: 0;
+        margin-right: auto;
         order: 3;
-    }
-
-    .personnel div {
-        width: 90%;
-        margin: 0 auto;
     }
     /* extracurricular */
     .extracurricular {
         display: grid;
         grid-template: 0.1fr 1fr / 1fr 1fr;
         padding: 2rem 2rem 4rem 4rem;
+        gap: 3rem;
     }
 
     .extracurricular h2 {
@@ -242,6 +261,7 @@ tfoot {
     }
 
     .extracurricular img {
+        max-width: 40rem;
         order: 1;
     }
 
@@ -252,6 +272,11 @@ tfoot {
     #extracurricular p {
         font-size: 1.5rem;
         line-height: 2.5;
+    }
+
+    #extracurricular {
+        max-width: 40rem;
+        margin: 0 auto;
     }
     /* slide in */
     .personnel > div.hidden {

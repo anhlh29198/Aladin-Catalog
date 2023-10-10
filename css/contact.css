@@ -15,6 +15,10 @@
     gap: 3rem;
 }
 
+.heroes > div {
+    max-width: 30rem;
+}
+
 section.heroes h2,
 section.heroes p {
     color: var(--dark-color);
@@ -35,10 +39,12 @@ section.heroes p {
     text-align: justify;
 }
 
+.heroes > div + div {
+    width: 100%;
+}
+
 section.heroes img {
     width: 100%;
-    border-radius: 5px;
-    border: 3px solid var(--dark-color);
 }
 /* contact */
 .contact h2,
@@ -67,6 +73,7 @@ ul.info {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    max-width: 30rem;
 }
 
 li.info {
@@ -197,15 +204,15 @@ iframe {
     }
 
     .heroes > div {
-        width: 45%;
+        max-width: 40rem;
     }
 
     .heroes > div + div {
-        width: 40%;
+        max-width: 30rem;
     }
 
     form {
-        width: 50%;
+        max-width: 40rem;
     }
 
     form.hidden {
@@ -218,34 +225,24 @@ iframe {
 }
 
 @media (min-width: 1280px) {
-    body {
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-
-    nav,
-    .heroes,
-    .contact,
-    footer {
-        width: 100%;
-        flex-shrink: 0;
+    main {
+        display: grid;
+        grid-template: 1fr / 1fr 1fr;
     }
 
     .form {
-        width: 50%;
-    }
-
-    form {
-        width: 100%;
+        order: 3;
     }
 
     .map {
-        width: 50%;
+        order: 2;
+        grid-row: span 2;
     }
 
     .map iframe {
         height: 100%;
     }
+
 }
 
 /* overlay */

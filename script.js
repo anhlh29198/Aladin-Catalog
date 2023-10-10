@@ -135,7 +135,7 @@ checkPage();
 //partner-logo auto play
 function autoPartnerLogo() {
     const slides = document.querySelectorAll(".partner-logo.smallScreen");
-    const interval = 5000;
+    const interval = 4000;
     let i = 0;
     let slideInterval = setInterval(nextLogo, interval);
     function nextLogo() {
@@ -238,7 +238,7 @@ function onPageScroll() {
     });
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
-            entry.target.classList.toggle("show", entry.isIntersecting);
+            entry.target.classList.add("show", entry.isIntersecting);
         });
     });
     const hidden = document.querySelectorAll(".hidden");

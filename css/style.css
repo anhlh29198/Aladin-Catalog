@@ -13,7 +13,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 html {
@@ -68,10 +68,10 @@ nav {
 .navbar {
     position: relative;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     background-color: var(--dark-color);
-    padding: 0.5rem 1rem;
+    padding: 1rem;
 }
 
 .logoCompany {
@@ -145,21 +145,21 @@ div.navMenu {
     display: none;
 }
 /* sidebar */
-.sidebar {
+.sidebar{
     display: flex;
     height: 0;
     width: 100%;
     background-color: var(--lightest-color);
     flex-direction: column;
     align-items: start;
-    gap: 2rem;
+    gap: 5rem;
     transition: all 0.5s ease-in-out;
     z-index: 100;
     overflow-y: hidden;
 }
 
 .sidebar.active {
-    height: 30rem;
+    height: 40rem;
 }
 
 .sidebarMenu {
@@ -167,7 +167,7 @@ div.navMenu {
     margin-left: 1rem;
 }
 
-.sidebar > .sidebarMenu > ul {
+.sidebar .sidebarMenu > ul {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
@@ -206,6 +206,8 @@ li.sidebarMenu a:hover {
 .sidebar .socialMedia ul {
     gap: 0.5rem;
 }
+
+
 /* footer */
 footer {
     background-color: var(--footer-color);
@@ -214,7 +216,6 @@ footer {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    margin-top: 2rem;
     padding: 2rem 2rem;
 }
 
@@ -292,7 +293,7 @@ li.socialMedia a {
     .navMenu ul {
         display: flex;
         flex-direction: row;
-        gap: 2.5rem;
+        gap: 4rem;
     }
 
     li.navMenu {
