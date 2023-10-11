@@ -245,6 +245,83 @@ function onPageScroll() {
     hidden.forEach((element) => observer.observe(element));
 }
 onPageScroll();
+// button scroll up
+function btnScrollUp() {
+    const scrollUpBtn = document.querySelector(".scrollupBtn");
+    scrollUpBtn.addEventListener("click", () => {
+        document.querySelector("nav").scrollIntoView({
+            // behavior: "smooth"
+        });
+    });
+    window.document.addEventListener("scroll", () => {
+        if(window.scrollY > 750) {
+            scrollUpBtn.style.opacity = "1";
+        } else {
+            scrollUpBtn.style.opacity = "0";
+        }
+    });
+}
+btnScrollUp();
+// heroes text typewriter animation
+function typewriter() {
+    const TxtType = function(el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 10) || 2000;
+        this.txt = '';
+        this.tick();
+        this.isDeleting = false;
+    };
+
+    TxtType.prototype.tick = function() {
+        let i = this.loopNum % this.toRotate.length;
+        let fullTxt = this.toRotate[i];
+        // add or delete letter
+        if (this.isDeleting) {
+            this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+            this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+        // show the text on page
+        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+        // update this 
+        let that = this;
+        let delta = 70 - Math.random() * 50;
+
+        if (this.isDeleting) { delta /= 2; }
+
+        if (!this.isDeleting && this.txt === fullTxt) {
+            delta = this.period;
+            this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+            this.isDeleting = false;
+            this.loopNum++;
+            delta = 500;
+        }
+
+        setTimeout(function() {
+        that.tick();
+        }, delta);
+    };
+
+    window.onload = function() {
+        const elements = document.getElementsByClassName('typewrite');
+        
+        for (let i=0; i<elements.length; i++) {
+            let toRotate = elements[i].getAttribute('data-type');
+            let period = elements[i].getAttribute('data-period');
+            if (toRotate) {
+              new TxtType(elements[i], JSON.parse(toRotate), period);
+            }
+        }
+        // INJECT CSS
+        const css = document.createElement("style");
+        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid var(--dark-color)}";
+        document.body.appendChild(css);
+    };
+}
+typewriter();
 // form validation
 function formValidation() {
     const formInputs = document.querySelectorAll(".form-input");
@@ -367,4 +444,3 @@ function formValidation() {
     });
 }
 formValidation();
-

@@ -42,7 +42,7 @@ section.heroes h2 {
 }
 
 section.heroes p {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     color: var(--dark-color);
     text-align: justify;
 }
@@ -60,7 +60,7 @@ section.heroes button {
     padding: 0.5rem 0.75rem;
     border: 1px solid var(--lightest-color);
     border-radius: 5px;
-    font-size: 1rem;
+    font-size: 1.25rem;
     font-weight: 600;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.253);
     transition: all 0.2s ease-in-out;
@@ -105,7 +105,7 @@ section.heroes img {
 }
 
 #personnel p {
-    font-size: 1.5rem;
+    font-size: 1rem;
     text-align: justify;
     line-height: 2rem;
     background-color: var(--lightest-color);
@@ -129,13 +129,13 @@ table {
 caption {
     color: var(--lightest-color);
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     margin-bottom: 2rem;
     border-bottom: 3px solid var(--lightest-color);
 }
 
 thead {
-    font-size: 1.175rem;
+    font-size: 1.25rem;
 }
 
 th {
@@ -164,12 +164,6 @@ tfoot {
     list-style: circle;
 }
 /* query media */
-@media (min-width: 480px) {
-    section.heroes button {
-        font-size: 1.5rem;
-    }
-}
-
 @media (min-width: 720px) {
     /* heroes */
     .heroes {
@@ -182,11 +176,6 @@ tfoot {
     .buttonHeroes {
         display: flex;
         gap: 3rem;
-    }
-
-    section.heroes button {
-        padding: 0.5rem 0.75rem;
-        font-size: 1.5rem;
     }
 
     .heroes > div + div {
@@ -266,11 +255,11 @@ tfoot {
     }
 
     #personnel p {
-        font-size: 1.25rem;
+        font-size: 1rem;
     }
 
     #extracurricular p {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
         line-height: 2.5;
     }
 

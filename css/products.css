@@ -62,13 +62,13 @@ section.heroes p {
 }
 
 section.heroes h2 {
-    font-size: 2.5rem;   
+    font-size: 3rem;   
     margin-bottom: 1.5rem;
     text-align: center;
 }
 
 section.heroes p {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     text-align: justify;
     margin: 0 3rem;
 }
@@ -86,7 +86,7 @@ section.heroes button {
     padding: 0.5rem 0.75rem;
     border: 1px solid var(--lightest-color);
     border-radius: 5px;
-    font-size: 1rem;
+    font-size: 1.25rem;
     font-weight: 600;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.253);
     transition: all 0.2s ease-in-out;
@@ -144,7 +144,7 @@ section.heroes ~ section h2 {
 }
 
 .slide > div a {
-    font-size: 1.75rem;
+    font-size: 1.25rem;
     background-color: var(--lightest-color);
     color: var(--dark-color);
     border-bottom: 3px solid var(--dark-color) ;
@@ -152,7 +152,7 @@ section.heroes ~ section h2 {
 
 .slide > div p {
     margin-top: 1rem;
-    font-size: 1.5rem;
+    font-size: 1rem;
     text-align: justify;
     color: var(--dark-color);
 }
@@ -263,12 +263,9 @@ section.heroes ~ section:nth-child(odd) a:hover,
     .heroes h2 {
         text-align: start;
     }
-    section.heroes button {
-        font-size: 1.5rem;
-    }
 }
 
-@media (min-width: 720px) {
+@media (min-width: 828px) {
     /* heroes */
     .heroes {
         flex-direction: row;
@@ -294,10 +291,6 @@ section.heroes ~ section:nth-child(odd) a:hover,
         max-width: 30rem;
         min-width: 20rem;
     }
-    
-    section.heroes button {
-        font-size: 1.5rem;
-    }
     /* products */
     .product {
         width: 100%;
@@ -307,7 +300,6 @@ section.heroes ~ section:nth-child(odd) a:hover,
     .entertainment h2,
     .services h2 {
         text-align: center;
-        font-size: 2rem;
     }
 
     .leftArrow,
@@ -316,40 +308,17 @@ section.heroes ~ section:nth-child(odd) a:hover,
     }
 
     .slide {
-        display: flex;
-        flex-direction: row;
         justify-content: space-between;
         padding: 3rem 2rem;
         gap: 1.5rem;
-    }
-
-    .business .slide {
-        flex-direction: row-reverse;
-    }
-
-    .slide img {
-        width: 45%;
-    } 
-
-    .slide div {
-        width: 45%;
-    }
-
-    .slide div p {
-        font-size: 1.25rem;
     }
     
     .entertainment h2,
     .services h2,
     .business h2 {
         margin: 3rem auto;
-        font-size: 2rem;
         text-align: center;
         width: fit-content;
-    }
-    
-    section.heroes ~ section h2 {
-        font-size: 2rem;
     }
     
     .slide img {
@@ -380,28 +349,29 @@ section.heroes ~ section:nth-child(odd) a:hover,
 }
 
 @media (min-width: 1280px) {
-    /* .heroes > div {
-        width: 45%;
-    }
-    .heroes > div + div {
-        width: 45%;
-    } */
-
     .slide {
-        gap: 0;
+        flex-direction: row;
         padding: 3rem 2rem;
     }
 
+    .business .slide {
+        flex-direction: row-reverse;
+    }
+
     .slide img {
-        width: 50%;
+        /* max-width: 50rem;
+        min-width: 40rem; */
+        width: 70%;
     } 
 
     .slide div {
-        width: 45%;
+        /* max-width: 35rem;
+        min-width: 20rem; */
+        width: 30%;
     }
 
     .product {
-        width: 85%;
+        width: 80%;
         margin: 0 auto;
     }
 }

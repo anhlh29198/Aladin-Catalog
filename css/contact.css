@@ -30,10 +30,6 @@ section.heroes h2 {
     border: none;
 }
 
-section.heroes h2 span {
-    color: var(--lightest-color);
-}
-
 section.heroes p {
     font-size: 1.5rem;
     text-align: justify;
@@ -49,7 +45,7 @@ section.heroes img {
 /* contact */
 .contact h2,
 legend h2 {
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 .contact {
@@ -121,12 +117,12 @@ legend h2 {
 }
 
 .form-input label {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     color: var(--dark-color);
 }
 
 .form-input input {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     border-radius: 5px;
     border: none;
 }
@@ -167,7 +163,7 @@ form button {
     padding: 0.5rem 1rem;
     border-radius: 5px;
     margin: 3rem auto;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.253);
     color: var(--dark-color);
     transition: all 0.2s ease-in-out;

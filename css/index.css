@@ -8,7 +8,7 @@
 }
 
 h2 {
-    font-size: clamp(1.75rem, 1.75rem + 5vw, 2.5rem);
+    font-size: 2rem;
     margin: 1.5rem 0;
     text-align: center;
 }
@@ -71,7 +71,7 @@ h2 {
 
 #cardDesign + div {
     margin-top: 3rem;
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     font-weight: 500;
     text-align: justify;
     color: var(--dark-color);
@@ -91,7 +91,7 @@ section.heroes button {
     padding: 0.5rem 0.75rem;
     border: 1px solid var(--lightest-color);
     border-radius: 5px;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 600;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.253);
     transition: all 0.2s ease-in-out;
@@ -105,7 +105,12 @@ section.heroes button:hover {
 
 .heroes p > span{
     font-weight: 900;
-    font-size: 2.5rem;
+    font-size: 3rem;
+}
+
+.typewrite > .wrap {
+    font-weight: 500;
+    font-size: 1.5rem;
 }
 /* section-counter */
 .section-counter {
@@ -124,7 +129,7 @@ section.heroes button:hover {
 }
 
 .card p ion-icon {
-    font-size: 80px;
+    font-size: 64px;
     color: var(--dark-color);
 }
 
@@ -138,7 +143,7 @@ section.heroes button:hover {
 }
 
 .card h3 {
-    font-size: 2rem;
+    font-size: 1.25rem;
 }
 /* core-values*/
 #core-values {
@@ -167,11 +172,11 @@ section.heroes button:hover {
     display: flex;
     align-items: center;
     gap: 1rem;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
 }
 
 #core-values div h3 span{
-    font-size: clamp(1.75rem, 1.75rem + 5vw, 3rem);
+    font-size: 2rem;
 }
 
 #core-values div p {
@@ -254,7 +259,7 @@ section.heroes button:hover {
 
 .circle div {
     color: var(--dark-color);
-    font-size: clamp(1rem, 1rem + 1vw, 1.4rem);
+    font-size: 1.25rem;
     font-weight: 600;
     padding: 0.25rem;
     margin-right: -10rem;
@@ -270,7 +275,7 @@ section.heroes button:hover {
 
 .circle .date {
     margin-top: 0.5rem;
-    font-size: 1.25rem;
+    font-size: 1rem;
     padding: 0.25rem;
 }
 
@@ -344,7 +349,7 @@ section.heroes button:hover {
 #language h3,
 #front-end h3,
 #back-end h3 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
 }
 
 #front-end,
@@ -367,12 +372,6 @@ section.heroes button:hover {
     box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.363);
     border-radius: 1rem;
     transition: transform 0.3s ease-out;
-}
-
-.arrowLeft,
-.arrowRight {
-    display: none;
-    font-size: 2rem; 
 }
 /* partners*/
 .partners {
@@ -472,13 +471,8 @@ section.heroes button:hover {
         order: 1;
         text-align: start;
         max-width: 40rem;
-        font-size: 1.5rem;
         margin-left: auto;
         align-items: start;
-    }
-
-    .heroes p > span {
-        font-size: 4.5rem;
     }
     /* section-counter */
     .section-counter {
@@ -736,11 +730,6 @@ section.heroes button:hover {
         padding: 0;
         text-align: start;
         margin-right: -10rem;
-    }
-
-    .circle .step, 
-    .circle:nth-child(even) .step {
-        font-size: 1.5rem;
     }
 
     .circle:nth-child(even) .date {

@@ -89,7 +89,7 @@ nav {
 .logoCompany p {
     color: var(--lightest-color);
     margin: 0 0.5rem;
-    font-size: 1.25rem;
+    font-size: 1rem;
 }
 /* hamburger Menu */
 .hamburgerMenu {
@@ -187,7 +187,7 @@ li.sidebarMenu a:hover {
 
 .sidebar a {
     color: var(--dark-color);
-    font-size: 2rem;
+    font-size: 1.5rem;
     padding: 0 0.5rem;
 }
 
@@ -228,7 +228,7 @@ footer {
 footer .logoCompany a {
     color: var(--light-color);
     margin-left: 1rem;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 footer .logoCompany a:hover {
@@ -259,7 +259,7 @@ li.footerMenu a:hover {
 }
 
 li.socialMedia a {
-    font-size: 40px;
+    font-size: 32px;
 }
 
 footer li.socialMedia a {
@@ -274,7 +274,23 @@ li.socialMedia a:hover {
 li.socialMedia a {
     display: flex;
 }
+/* scroll up button */
+.scrollupBtn {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    display: flex;
+    font-size: 48px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.233);
+    color: #faf1e66c;
+    transition: all 0.3s ease-in-out;
+}
 
+.scrollupBtn:hover {
+    background-color: rgba(0, 0, 0, 0.418);
+    color: var(--lightest-color);
+}
 @media (min-width: 720px) {
     /* nav */
     .logoCompany p {
