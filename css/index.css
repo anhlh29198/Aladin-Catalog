@@ -103,9 +103,14 @@ section.heroes button:hover {
     box-shadow: 3px 2px 2px rgba(0, 0, 0, 0.253);
 }
 
-.heroes p > span{
+#bigCompanyName {
     font-weight: 900;
     font-size: 3rem;
+}
+
+#cardDesign + div p {
+    max-width: 40rem;
+    min-height: 20rem;
 }
 
 .typewrite > .wrap {
@@ -474,6 +479,10 @@ section.heroes button:hover {
         margin-left: auto;
         align-items: start;
     }
+
+    #cardDesign + div p {
+        min-height : 16rem;
+    }
     /* section-counter */
     .section-counter {
         order: 3;
@@ -623,6 +632,10 @@ section.heroes button:hover {
 }
 
 @media (min-width: 1280px) {
+    #cardDesign + div p {
+        width: 40rem;
+        min-height: 8rem;
+    }
     /* core-values*/
     #core-values {
         grid-template: 0.15fr repeat(2, 1fr) / repeat(4, 1fr);

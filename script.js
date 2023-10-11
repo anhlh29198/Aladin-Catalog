@@ -34,8 +34,7 @@ function checkPage() {
     const sidebarMenu = document.querySelectorAll("li.sidebarMenu");
     const footerMenu = document.querySelectorAll("li.footerMenu");
     const navMenu = document.querySelectorAll("li.navMenu");
-    const pathArray = document.location.href.split("/");
-    const location = pathArray[pathArray.length-1];
+    const location = document.location.href.split("/").pop();
     switch (location) {
         case "index.html":
             sidebarMenu[0].classList.toggle("active");
