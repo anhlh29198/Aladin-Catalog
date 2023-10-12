@@ -1,5 +1,5 @@
 //animate hamburger menu
-function animateMenu() {
+function showDropdownMenu() {
     const hamburgerMenu = document.querySelector(".hamburgerMenu");
     hamburgerMenu.addEventListener("click", () => {
         hamburgerMenu.classList.toggle("active");
@@ -28,7 +28,7 @@ function animateMenu() {
         }); 
     });
 }
-animateMenu();
+showDropdownMenu();
 //check page for menu
 function checkPage() {
     const sidebarMenu = document.querySelectorAll("li.sidebarMenu");
@@ -252,11 +252,16 @@ function btnScrollUp() {
             // behavior: "smooth"
         });
     });
+    window.addEventListener("load", () => {
+        scrollUpBtn.style.display = "none";
+    });
     window.document.addEventListener("scroll", () => {
         if(window.scrollY > 750) {
-            scrollUpBtn.style.opacity = "1";
+            scrollUpBtn.style.display = "flex";
+            scrollUpBtn.style.cursor = "pointer";
         } else {
-            scrollUpBtn.style.opacity = "0";
+            scrollUpBtn.style.display = "none";
+            scrollUpBtn.style.cursor = "none";
         }
     });
 }
