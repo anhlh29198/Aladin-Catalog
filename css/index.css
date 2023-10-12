@@ -252,8 +252,8 @@ section.heroes button:hover {
     align-items: end;
     flex-direction: column;
     justify-content: center;
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
     border-radius: 50%;
     background-color: var(--dark-color);
 }
@@ -285,7 +285,7 @@ section.heroes button:hover {
 }
 
 .line {
-    width: 1rem;
+    width: 0.5rem;
     height: 70rem;
     background-color: var(--dark-color);
     border-radius: 1rem;
@@ -549,7 +549,7 @@ section.heroes button:hover {
     }
     
     #gridLine {
-        width: 1rem;
+        width: 0.25rem;
         height: 100%;
         background-color: var(--lightest-color);
         border-radius: 1rem;
@@ -696,7 +696,7 @@ section.heroes button:hover {
     /* roadmap white*/
     .line {
         width: 70rem;
-        height: 1rem;
+        height: 0.5rem;
         margin: 10rem auto;
         flex-direction: row;
     }
