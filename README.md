@@ -1,2 +1,2 @@
 # Aladin-Catalog
-A sort of a slide of Aladintech company catalog
+A sort of Aladintech company catalog
